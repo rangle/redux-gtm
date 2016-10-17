@@ -1,0 +1,17 @@
+{
+  "name": "redux-gtm",
+  "version": "0.0.0",
+  "description": "Synchronizes Redux and the Analytics Data Layer",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^16.0.1"
+  },
+  "jest": {
+    "testRegex": "(/test/.*\\.spec.js)$"
+  }
+}
