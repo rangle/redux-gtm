@@ -27,6 +27,16 @@ describe('Redux GTM middleware', () => {
           };
         },
       },
+      'LOCATION_CHANGED': {
+        eventName: 'page-view',
+        generatePayload(state, action) {
+          return {};
+        },
+        eventSchema: {
+          event: () => true,
+          route: () => false,
+        },
+      }
     };
 
     // create a Redux store with the reduxGTM middleware
@@ -44,6 +54,18 @@ describe('Redux GTM middleware', () => {
     // dispatch a tracked action
     store.dispatch({ type: 'FORM_FILL_ENDED', formName: 'sign-up' });
 
+    expect(window.dataLayer).toEqual([
+      {
+        event: 'user-form-input',
+        timeOnTask: 9,
+        form: 'sign-up',
+      },
+    ]);
+
+    // dispatch an action with an invalid event shape (based on eventSchema)
+    store.dispatch({ type: 'LOCATION_CHANGED' });
+
+    // the event should not be pushed to the data layer
     expect(window.dataLayer).toEqual([
       {
         event: 'user-form-input',
