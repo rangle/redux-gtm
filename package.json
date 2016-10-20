@@ -9,9 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^16.0.1"
+    "jest": "^16.0.1",
+    "redux": "^3.6.0"
   },
   "jest": {
-    "testRegex": "(/test/.*\\.spec.js)$"
+    "testRegex": "(/test/.*\\.js)$"
   }
 }
