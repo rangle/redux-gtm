@@ -1,5 +1,5 @@
 const { createStore, applyMiddleware } = require('redux');
-const middleware = require('../lib/middleware');
+const createMiddleware = require('../lib/create-middleware');
 
 describe('Redux GTM middleware', () => {
   const initialState = {
@@ -40,7 +40,8 @@ describe('Redux GTM middleware', () => {
     };
 
     // create a Redux store with the reduxGTM middleware
-    const store = createStore(reducer, applyMiddleware(middleware(actionsToTrack)));
+    const analyticsMiddleware = createMiddleware(actionsToTrack);
+    const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
 
     expect(window.dataLayer).toBeUndefined();
 
