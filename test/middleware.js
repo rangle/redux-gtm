@@ -13,67 +13,93 @@ describe('Redux GTM middleware', () => {
     return state;
   };
 
-  it('Maps specified actions to events', () => {
-    const actionsToTrack = {
-      'FORM_FILL_ENDED': {
-        eventName: 'user-form-input',
-        eventFields(state, action) {
-          const startTime = state.formFillStartTime;
-          const endTime = state.formFillEndTime;
-          const formName = action.formName;
-          return {
-            timeOnTask: endTime - startTime,
-            form: formName,
-          };
+  describe('createMiddleware(actionsToTrack)', () => {
+    it('Pushes analytics events to window.dataLayer', () => {
+      const actionsToTrack = {
+        'FORM_FILL_ENDED': {
+          eventName: 'user-form-input',
+          eventFields(state, action) {
+            const startTime = state.formFillStartTime;
+            const endTime = state.formFillEndTime;
+            const formName = action.formName;
+            return {
+              timeOnTask: endTime - startTime,
+              form: formName,
+            };
+          },
         },
-      },
-      'LOCATION_CHANGED': {
-        eventName: 'page-view',
-        eventFields(state, action) {
-          return {};
+        'LOCATION_CHANGED': {
+          eventName: 'page-view',
+          eventFields(state, action) {
+            return {};
+          },
+          eventSchema: {
+            event: () => true,
+            route: () => false,
+          },
+        }
+      };
+
+      // create a Redux store with the reduxGTM middleware
+      const analyticsMiddleware = createMiddleware(actionsToTrack);
+      const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
+
+      expect(window.dataLayer).toBeUndefined();
+
+      // dispatch an untracked action
+      store.dispatch({ type: 'SOME_UNTRACKED_ACTION' });
+
+      // It only tracks events defined in actionsToTrack
+      expect(window.dataLayer).toEqual([]);
+
+      // dispatch a tracked action
+      store.dispatch({ type: 'FORM_FILL_ENDED', formName: 'sign-up' });
+
+      expect(window.dataLayer).toEqual([
+        {
+          event: 'user-form-input',
+          timeOnTask: 9,
+          form: 'sign-up',
         },
-        eventSchema: {
-          event: () => true,
-          route: () => false,
+      ]);
+
+      // dispatch an action with an invalid event shape (based on eventSchema)
+      store.dispatch({ type: 'LOCATION_CHANGED' });
+
+      // the event should not be pushed to the data layer
+      expect(window.dataLayer).toEqual([
+        {
+          event: 'user-form-input',
+          timeOnTask: 9,
+          form: 'sign-up',
         },
-      }
-    };
+      ]);
 
-    // create a Redux store with the reduxGTM middleware
-    const analyticsMiddleware = createMiddleware(actionsToTrack);
-    const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
+      window.dataLayer = undefined;
+    });
+  });
 
-    expect(window.dataLayer).toBeUndefined();
+  describe('createMiddlware(actionsToTrack, customDataLayer', () => {
+    it('Pushes analytics events to the customDataLayer', () => {
+      const actionsToTrack = {
+        'FORM_FILL_ENDED': {
+          eventName: 'user-form-input',
+        }
+      };
 
-    // dispatch an untracked action
-    store.dispatch({ type: 'SOME_UNTRACKED_ACTION' });
+      const customDataLayer = {
+        push: jest.fn(),
+      };
+      const analyticsMiddleware = createMiddleware(actionsToTrack, customDataLayer);
+      const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
 
-    // It only tracks events defined in actionsToTrack
-    expect(window.dataLayer).toBeUndefined();
+      store.dispatch({ type: 'FORM_FILL_ENDED' });
 
-    // dispatch a tracked action
-    store.dispatch({ type: 'FORM_FILL_ENDED', formName: 'sign-up' });
-
-    expect(window.dataLayer).toEqual([
-      {
+      const expected = {
         event: 'user-form-input',
-        timeOnTask: 9,
-        form: 'sign-up',
-      },
-    ]);
+      };
 
-    // dispatch an action with an invalid event shape (based on eventSchema)
-    store.dispatch({ type: 'LOCATION_CHANGED' });
-
-    // the event should not be pushed to the data layer
-    expect(window.dataLayer).toEqual([
-      {
-        event: 'user-form-input',
-        timeOnTask: 9,
-        form: 'sign-up',
-      },
-    ]);
-
-    window.dataLayer = undefined;
+      expect(customDataLayer.push).toHaveBeenCalledWith(expected);
+    });
   });
 });
