@@ -17,7 +17,7 @@ describe('Redux GTM middleware', () => {
     const actionsToTrack = {
       'FORM_FILL_ENDED': {
         eventName: 'user-form-input',
-        generatePayload(state, action) {
+        eventFields(state, action) {
           const startTime = state.formFillStartTime;
           const endTime = state.formFillEndTime;
           const formName = action.formName;
@@ -29,7 +29,7 @@ describe('Redux GTM middleware', () => {
       },
       'LOCATION_CHANGED': {
         eventName: 'page-view',
-        generatePayload(state, action) {
+        eventFields(state, action) {
           return {};
         },
         eventSchema: {
