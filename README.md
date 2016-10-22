@@ -89,18 +89,18 @@ Return a meta reducer for synchronizing actions to custom GTM events.
 ### eventDefinitions `Object`
 Used by ReduxGTM to map Redux actions to events.
 
-#### Example
-The following example shows how you would map the `"PRODUCT_PURCHASED"` action
-to the `'checkoutComplete'` event.
+##### Example
+The following example shows how you would map the `PRODUCT_PURCHASED` action
+to the `checkoutComplete` event.
 
-```
+```js
 {
   'PRODUCT_PURCHASED': { eventName: 'checkoutComplete' }
 }
 ```
 
 #### Notes:
- - Each key in the eventDefinitions object must match an existing Redux action type.
+ - Each key in the `eventDefinitions` object must match an existing Redux action type.
  - Each value must be a valid `eventDefinition` (see below).
 
 ### eventDefinition `Object`
