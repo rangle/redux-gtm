@@ -1,6 +1,5 @@
 # redux-gtm
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE)
-[![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/redux-gtm)
 
 > Synchronize Redux actions with Google Tag Manager events
 
