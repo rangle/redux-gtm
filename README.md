@@ -1,5 +1,5 @@
 # redux-gtm
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE.md)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE)
 
 > Synchronize Redux actions with Google Tag Manager events
 
@@ -56,4 +56,4 @@ ReduxGTM will emit `some-gtm-custom-event` to Google Tag Manager.
 ## License
 
 This project is licensed under the MIT License - see
-the [LICENSE.md](LICENSE.md) file for details
+the [LICENSE.md](LICENSE) file for details
