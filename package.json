@@ -6,6 +6,9 @@
   "scripts": {
     "test": "jest"
   },
+  "engines": {
+    "node": ">=6.2.0"
+  },
   "author": "",
   "license": "MIT",
   "devDependencies": {
