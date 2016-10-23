@@ -15,4 +15,4 @@ shows how you would map the `PRODUCT_PURCHASED` action to the
 
 ##### Notes
  - Each key must be a valid Redux action type
- - Each property must be a valid [eventDefinition](docs/event-definition.md)
+ - Each property must be a valid [eventDefinition](event-definition.md)
