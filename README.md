@@ -1,6 +1,7 @@
 # redux-gtm
-> Synchronize Redux actions with Google Tag Manager events
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE.md)
+
+> Synchronize Redux actions with Google Tag Manager events
 
 ## Getting Started
 
@@ -21,6 +22,7 @@ yarn add redux-gtm
 ```js
 import reducer from './reducer';
 import { createStore, applyMiddleware } from 'redux';
+
 // 1. Import ReduxGTM
 import { createMiddleware } from 'redux-gtm';
 
@@ -40,9 +42,8 @@ Now, whenever your application dispatches `SOME_REDUX_ACTION_TYPE`,
 ReduxGTM will emit `some-gtm-custom-event` to Google Tag Manager.
 
 #### Notes
-- Use ReduxGTM.createMiddleware when managing state using Redux.
-- Use ReduxGTM.createMetaReducer when managing state using ngrx-store.
-- When mapping actions to events, each action type must be mapped to a valid eventDefinition.
+- When mapping actions to events, each action type must be mapped to a
+  valid [eventDefinition](docs/event-definition.md).
 
 ## Examples
  - [How do I track pageviews when using React Router?](docs/examples/example1.md)

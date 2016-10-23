@@ -1,3 +1,5 @@
+## How do I pageviews when using React Router?
+
 Suppose you've created a custom event in Google Tag Manger (GTM) for
 tracking page views: `my-app-page-view`. And the custom event triggers a
 Google Analytics tag that sends the custom Data Layer variable: `route`.
@@ -16,7 +18,7 @@ Start by creating a mapping between your Redux actions and you analytics
 events. In this example the action type we want to track is defined by
 the `LOCATION_CHANGE` constant exposed by `react-router-redux`.
 
-      ```js
+```js
 // event-definitions.js
 
 import { LOCATION_CHANGE } from 'react-router-redux';
@@ -37,7 +39,7 @@ export default eventDefinitions;
 Next, create the middleware using `createMiddleware` and your event
 definitions. Then apply the middleware when creating the Redux store.
 
-           ```js
+```js
 // wherever you are creating the Redux store
 
 import { createMiddleware } from 'redux-gtm'; // **
