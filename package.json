@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Synchronizes Redux and the Analytics Data Layer",
   "main": "lib/index.js",
+  "typings": "./index.d.ts",
   "scripts": {
     "test": "jest"
   },
@@ -13,7 +14,9 @@
   "license": "MIT",
   "devDependencies": {
     "jest": "^16.0.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "typescript": "^2.0.3",
+    "typescript-definition-tester": "0.0.4"
   },
   "jest": {
     "testRegex": "(/test/.*\\.js)$"
