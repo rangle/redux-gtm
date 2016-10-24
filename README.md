@@ -32,7 +32,7 @@ const eventDefinitions = {
 };
 
 // 3. Create the middleware using createMiddleware from ReduxGTM
-const analyticsMiddleware = createMiddleware(eventDefintions);
+const analyticsMiddleware = createMiddleware(eventDefinitions);
 
 // 4. Apply the middleware when creating your Redux store
 const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
