@@ -1,5 +1,7 @@
 # redux-gtm
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE)
+[![npm version](https://badge.fury.io/js/redux-gtm.svg)](https://badge.fury.io/js/redux-gtm)
+[![CircleCI](https://circleci.com/gh/rangle/redux-gtm.svg?style=svg)](https://circleci.com/gh/rangle/redux-gtm)
 
 > Synchronize Redux actions with Google Tag Manager events
 
