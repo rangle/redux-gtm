@@ -16,7 +16,7 @@ describe('Redux GTM middleware', () => {
   describe('createMiddleware(actionsToTrack)', () => {
     it('Pushes analytics events to window.dataLayer', () => {
       const actionsToTrack = {
-        'FORM_FILL_ENDED': {
+        FORM_FILL_ENDED: {
           eventName: 'user-form-input',
           eventFields(prevState, action) {
             const startTime = prevState.formFillStartTime;
@@ -28,16 +28,16 @@ describe('Redux GTM middleware', () => {
             };
           },
         },
-        'LOCATION_CHANGED': {
+        LOCATION_CHANGED: {
           eventName: 'page-view',
-          eventFields(prevState, action) {
+          eventFields() {
             return {};
           },
           eventSchema: {
             event: () => true,
             route: () => false,
           },
-        }
+        },
       };
 
       // create a Redux store with the reduxGTM middleware
@@ -82,9 +82,9 @@ describe('Redux GTM middleware', () => {
   describe('createMiddlware(actionsToTrack, customDataLayer', () => {
     it('Pushes analytics events to the customDataLayer', () => {
       const actionsToTrack = {
-        'FORM_FILL_ENDED': {
+        FORM_FILL_ENDED: {
           eventName: 'user-form-input',
-        }
+        },
       };
 
       const customDataLayer = {
