@@ -1,6 +1,6 @@
 {
   "name": "redux-gtm",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Synchronize Redux actions with Google Tag Manager events",
   "main": "lib/index.js",
   "typings": "./index.d.ts",
