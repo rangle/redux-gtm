@@ -26,7 +26,7 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 const eventDefinitions = {
   [LOCATION_CHANGE]: {
     eventName: 'my-app-page-view' // The name of the custom GTM event
-    eventFields: (state, action) => ({
+    eventFields: (prevState, action) => ({
       // Map the custom Data Layer variable to the new route
       route: action.payload.location.pathname,
     }),

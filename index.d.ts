@@ -28,7 +28,7 @@ export interface EventSchema {
  */
 export interface EventDefinition {
   eventName?: string;
-  eventFields? (state: any, action: any): any;
+  eventFields? (prevState: any, action: any): any;
   eventSchema?: EventSchema;
 }
 
