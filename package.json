@@ -5,14 +5,26 @@
   "main": "lib/index.js",
   "typings": "./index.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "test:cov": "npm test -- --coverage",
     "lint": "eslint src test",
     "check": "npm run lint && npm run test"
   },
   "engines": {
     "node": ">=6.2.0"
   },
-  "author": "",
+  "keywords": [
+    "redux-gtm",
+    "redux",
+    "google tag manager",
+    "google analytics",
+    "analytics"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rangle/redux-gtm.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "eslint": "^3.8.1",
