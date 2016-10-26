@@ -1,6 +1,6 @@
 const createEvent = require('../lib/create-event');
 
-describe('createEvent(eventDefinition, state, action)', () => {
+describe('createEvent(eventDefinition, prevState, action)', () => {
   // createEvent takes in an event definition, a state object,
   // and an action object. It returns a new event object with
   // an "event" property (taken from the eventName key in the
@@ -22,10 +22,10 @@ describe('createEvent(eventDefinition, state, action)', () => {
 
     const eventDefinition = { eventName: 'some-event', eventFields };
 
-    const state = { prop1: 'data1' };
+    const prevState = { prop1: 'data1' };
     const action = { type: 'SOME_REDUX_ACTION' };
 
-    const actual = createEvent(eventDefinition, state, action);
+    const actual = createEvent(eventDefinition, prevState, action);
     const expected = {
       event: 'some-event',
       eventProp1: 'some-event-data',
@@ -33,7 +33,7 @@ describe('createEvent(eventDefinition, state, action)', () => {
     };
 
     expect(eventFields).toHaveBeenCalled();
-    expect(eventFields).toHaveBeenCalledWith(state, action);
+    expect(eventFields).toHaveBeenCalledWith(prevState, action);
     expect(actual).toEqual(expected);
   });
 

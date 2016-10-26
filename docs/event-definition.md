@@ -4,7 +4,7 @@ Used by ReduxGTM to generate an event for a given Redux action.
 ```js
     {
      eventName: 'my-app-page-view',
-     eventFields: (state, action) => ({
+     eventFields: (prevState, action) => ({
        route: action.payload.location.pathname,
      }),
      eventSchema: {
@@ -22,9 +22,9 @@ defaults to the Redux action type.
 #### eventDefinition.eventFields (Optional) `Function`
 Attach a function to this property to define any variables you would
 like to emit with the event. Any function assigned to this property
-will receive the state of the application, and the associated action
-object. Any properties in the object returned by the attached function
-will be emitted along with the event.
+will receive the state of the application (before the action), and the
+associated action object. Any properties in the object returned by the
+attached function will be emitted along with the event.
 
 #### eventDefinition.eventSchema (Optional) `Object`
 Use this property to define a schema for the event. Attach validation

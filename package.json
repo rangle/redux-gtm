@@ -1,7 +1,7 @@
 {
   "name": "redux-gtm",
   "version": "0.1.1",
-  "description": "Synchronizes Redux and the Analytics Data Layer",
+  "description": "Synchronize Redux actions with Google Tag Manager events",
   "main": "lib/index.js",
   "typings": "./index.d.ts",
   "scripts": {

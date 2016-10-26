@@ -8,7 +8,7 @@ describe('Redux GTM middleware', () => {
 
   const reducer = (state = initialState, action) => {
     if (action.type === 'FORM_FILL_ENDED') {
-      return Object.assign({}, state, { formFillEndTime: 10 });
+      return Object.assign({}, state, { formFillStartTime: 0 });
     }
     return state;
   };
@@ -18,9 +18,9 @@ describe('Redux GTM middleware', () => {
       const actionsToTrack = {
         'FORM_FILL_ENDED': {
           eventName: 'user-form-input',
-          eventFields(state, action) {
-            const startTime = state.formFillStartTime;
-            const endTime = state.formFillEndTime;
+          eventFields(prevState, action) {
+            const startTime = prevState.formFillStartTime;
+            const endTime = action.time;
             const formName = action.formName;
             return {
               timeOnTask: endTime - startTime,
@@ -30,7 +30,7 @@ describe('Redux GTM middleware', () => {
         },
         'LOCATION_CHANGED': {
           eventName: 'page-view',
-          eventFields(state, action) {
+          eventFields(prevState, action) {
             return {};
           },
           eventSchema: {
@@ -53,7 +53,7 @@ describe('Redux GTM middleware', () => {
       expect(window.dataLayer).toEqual([]);
 
       // dispatch a tracked action
-      store.dispatch({ type: 'FORM_FILL_ENDED', formName: 'sign-up' });
+      store.dispatch({ type: 'FORM_FILL_ENDED', formName: 'sign-up', time: 10 });
 
       expect(window.dataLayer).toEqual([
         {
