@@ -26,7 +26,7 @@ Note, that there is no need to specify `eventName` here (commented out),
 because you named your GTM event the same as the tracked redux action.
 If `eventName` is omitted, the value will be taken from `action.type` by default.
 
-You have to provide `errorCode` as a part of acton payload when
+You have to provide `errorCode` as a part of action payload when
 dispatching `BOOK_TIME_OFF_FAILURE`. Needless to say, failures can be
 categorized by any value other than `errorCode`.
 
