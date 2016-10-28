@@ -49,6 +49,8 @@ ReduxGTM will emit `some-gtm-custom-event` to Google Tag Manager.
 
 ## Examples
  - [How do I track pageviews when using React Router?](docs/examples/example1.md)
+ - [How do I track failure events?](docs/examples/example2.md)
+ - [How to do mini surveys](docs/examples/example3.md)
 
 ## API
  - [ReduxGTM.createMiddleware(eventDefinitions, [dataLayer])](docs/create-middleware.md)
