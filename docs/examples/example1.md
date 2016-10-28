@@ -1,6 +1,6 @@
 ## How do I pageviews when using React Router?
 
-Suppose you've created a custom event in Google Tag Manger (GTM) for
+Suppose you've created a custom event in Google Tag Manager (GTM) for
 tracking page views: `my-app-page-view`. And the custom event triggers a
 Google Analytics tag that sends the custom Data Layer variable: `route`.
 
