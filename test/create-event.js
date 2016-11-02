@@ -42,4 +42,16 @@ describe('createEvent(eventDefinition, prevState, action)', () => {
     const expected = { event: 'SOME_REDUX_ACTION' };
     expect(actual).toEqual(expected);
   });
+
+  it('Will prioritize any "event" key returned in eventFields as the event name', () => {
+    const eventDefinition = {
+      eventFields: () => ({
+        event: 'some-event-name',
+      }),
+    };
+    const actual = createEvent(eventDefinition, {}, { type: 'SOME_REDUX_ACTION' });
+    const expected = { event: 'some-event-name' };
+    // As opposed to { event: 'SOME_REDUX_ACTION' }
+    expect(actual).toEqual(expected);
+  });
 });
