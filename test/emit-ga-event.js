@@ -1,6 +1,6 @@
 const emitGAEvent = require('../lib/emit-ga-event');
 
-describe('emitGAEvent(eventProps)',() => {
+describe('emitGAEvent(eventProps)', () => {
   it('Creates an event with the proper keys', () => {
     const actual = Object.keys(emitGAEvent());
     const expected = [
@@ -45,6 +45,6 @@ describe('emitGAEvent(eventProps)',() => {
     expect(actual.eventAction).toBe('unknown action');
     expect(actual.eventCategory).toBe('unknown category');
     expect(actual.eventLabel).toBe('unknown label');
-    expect(actual.eventValue).toBe('unknown value');;
+    expect(actual.eventValue).toBe('unknown value');
   });
 });
