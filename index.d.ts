@@ -41,11 +41,24 @@ export interface EventDefinitionsMap {
 }
 
 /**
- * Returns Redux middleware that synchronizes actions to Google Tag Manager events.
+ * Create Redux middleware that synchronizes actions to Google Tag Manager events.
  */
 export function createMiddleware(eventDefinitions: EventDefinitionsMap, dataLayer?: any): any;
 
 /**
- * Returns a meta reducer that synchronizes actions to Google Tag Manager events.
+ * Create a meta reducer that synchronizes actions to Google Tag Manager events.
  */
 export function createMetaReducer(eventDefinitions: EventDefinitionsMap, dataLayer?: any): any;
+
+export interface GAeventProperties {
+  eventAction?: string,
+  eventCategory?: string,
+  eventLabel?: string,
+  eventValue?: string,
+}
+
+/**
+ * Emit an event to Google Analtyics.
+ * Use with the ga-starter-container
+ */
+export function emitGAevent(eventProps?: GAeventProperties): any;

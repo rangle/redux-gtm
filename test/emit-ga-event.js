@@ -1,8 +1,8 @@
-const emitGAEvent = require('../lib/emit-ga-event');
+const emitGAevent = require('../lib/emit-ga-event');
 
-describe('emitGAEvent(eventProps)', () => {
+describe('emitGAevent(eventProps)', () => {
   it('Creates an event with the proper keys', () => {
-    const actual = Object.keys(emitGAEvent());
+    const actual = Object.keys(emitGAevent());
     const expected = [
       'event',
       'hitType',
@@ -15,13 +15,13 @@ describe('emitGAEvent(eventProps)', () => {
   });
 
   it('Creates an event with the proper name', () => {
-    const actual = emitGAEvent().event;
+    const actual = emitGAevent().event;
     const expected = 'REDUX_GTM_GA_EVENT';
     expect(actual).toEqual(expected);
   });
 
   it('Creates an event with the proper hitType', () => {
-    const actual = emitGAEvent().hitType;
+    const actual = emitGAevent().hitType;
     const expected = 'event';
     expect(actual).toEqual(expected);
   });
@@ -33,7 +33,7 @@ describe('emitGAEvent(eventProps)', () => {
       eventLabel: 'label',
       eventValue: 'value',
     };
-    const actual = emitGAEvent(eventProps);
+    const actual = emitGAevent(eventProps);
     expect(actual.eventAction).toBe('action');
     expect(actual.eventCategory).toBe('category');
     expect(actual.eventLabel).toBe('label');
@@ -41,7 +41,7 @@ describe('emitGAEvent(eventProps)', () => {
   });
 
   it('Assigns default values to the eventProps when not provided', () => {
-    const actual = emitGAEvent();
+    const actual = emitGAevent();
     expect(actual.eventAction).toBe('unknown action');
     expect(actual.eventCategory).toBe('unknown category');
     expect(actual.eventLabel).toBe('unknown label');
