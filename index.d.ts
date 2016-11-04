@@ -62,3 +62,9 @@ export interface GAeventProperties {
  * Use with the ga-starter-container
  */
 export function emitGAevent(eventProps?: GAeventProperties): any;
+
+/**
+ * Emit a page view to Google Analtyics.
+ * Use with the ga-starter-container
+ */
+export function emitGApageview(page?: string): any;
