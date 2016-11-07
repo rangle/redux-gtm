@@ -1,4 +1,4 @@
-const createGApageview = require('../lib/create-ga-pageview');
+const createGApageview = require('../../lib/event-helpers/create-ga-pageview');
 
 describe('createGApageview(page)', () => {
   it('Creates an event with the proper keys', () => {
