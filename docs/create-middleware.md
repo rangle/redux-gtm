@@ -1,4 +1,4 @@
-## createMiddleware(eventDefinitionsMap, [dataLayer]) `function`
+## createMiddleware(eventDefinitionsMap, [dataLayer])
 
 ### Returns
 [Redux middleware](http://redux.js.org/docs/advanced/Middleware.html#the-final-approach)

@@ -1,5 +1,5 @@
-## eventDefinitionsMap `object`
-Used by ReduxGTM to map action types to [eventDefinitions](./event-definition.md).
+## eventDefinitionsMap
+`Object` used by ReduxGTM to map action types to [eventDefinitions](./event-definition.md).
 
 ```js
 import { someEventDefinition } from './event-definitions';

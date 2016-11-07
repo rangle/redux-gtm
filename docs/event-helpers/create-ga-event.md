@@ -1,4 +1,4 @@
-## createGAevent(eventProps) `function`
+## createGAevent(eventProps)
 
 ### Returns
 A plain JavaScript object with the following properties:
@@ -14,7 +14,7 @@ A plain JavaScript object with the following properties:
 ```
 
 ### Expects
-##### `object` *(optional)* eventProps
+##### `object` eventProps *(optional)*
 Use the `eventProps` argument to pass in values for `eventAction`,
 `eventCategory`, `eventLabel`, and `eventValue`.
 

@@ -1,6 +1,6 @@
-## EventHelpers `object`
+## EventHelpers
 
-Helper functions for creating events with a specific shape.
+`Object` of helper functions for creating events with a specific shape.
 
 ```js
 import { EventHelpers } from 'redux-gtm';
