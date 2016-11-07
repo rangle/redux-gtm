@@ -1,4 +1,4 @@
-## `object` eventDefinitionsMap
+## eventDefinitionsMap `object`
 Used by ReduxGTM to map action types to [eventDefinitions](./event-definition.md).
 
 ```js

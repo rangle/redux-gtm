@@ -1,4 +1,4 @@
-## `object` eventDefinition
+## eventDefinition `object`
 Used by ReduxGTM to generate an event for a given action.
 
 ```js
@@ -14,12 +14,12 @@ const eventDefinition = {
 };
 ```
 
-#### *(optional)* `string` eventDefinition.eventName
+#### `string` *(optional)* eventDefinition.eventName
 Use this property to specify the name of the event you want to emit
 for the associated action. If not provided, the event name defaults to
 the action type.
 
-#### *(optional)* `function` eventDefinition.eventFields
+#### `function` *(optional)* eventDefinition.eventFields
 Attach a function to this property to define any variables you would
 like to emit with the event. Any function assigned to this property
 will receive the state of the application (before the action), and the
@@ -27,7 +27,7 @@ associated action object. Any property named "event" in the returned
 object will override any defaults or any event names defined in
 `eventName`.
 
-#### *(optional)* `object` eventDefinition.eventSchema
+#### `object` *(optional)* eventDefinition.eventSchema
 Use this property to define a schema for the event. Attach validation
 functions for each property in the event that you want to validate. If
 any of these validation functions return false, ReduxGTM will not emit

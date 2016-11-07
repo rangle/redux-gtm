@@ -1,4 +1,4 @@
-## `function` createGAevent(eventProps)
+## createGAevent(eventProps) `function`
 
 ### Returns
 A plain JavaScript object with the following properties:
@@ -14,9 +14,9 @@ A plain JavaScript object with the following properties:
 ```
 
 ### Expects
- - *(optional)* `object` eventProps
-   - Use the `eventProps` argument to pass in values for
-     `eventAction`, `eventCategory`, `eventLabel`, and `eventValue`.
+##### `object` *(optional)* eventProps
+Use the `eventProps` argument to pass in values for `eventAction`,
+`eventCategory`, `eventLabel`, and `eventValue`.
 
 ### Example
 You want to track the number of failed requests in your
