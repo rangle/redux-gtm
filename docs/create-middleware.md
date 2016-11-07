@@ -1,12 +1,12 @@
-## createMiddleware(eventDefinitionsMap, [dataLayer]) `Function`
+## `function` createMiddleware(eventDefinitionsMap, [dataLayer])
 
 ### Returns
 [Redux middleware](http://redux.js.org/docs/advanced/Middleware.html#the-final-approach)
 that synchronizes actions to Google Tag Manager events.
 
 ### Expects
-#### [eventDefinitionsMap](event-definitions-map.md) `Object`
-#### *Optional* dataLayer `Object`
+ - `object` [eventDefinitionsMap](event-definitions-map.md)
+ - `object` *Optional* dataLayer
 
 ### Example
 ```js

@@ -1,4 +1,4 @@
-## createGApageview(page) `Function`
+## `function` createGApageview(page)
 
 ### Returns
 A plain JavaScript object with the following properties:
@@ -11,8 +11,9 @@ A plain JavaScript object with the following properties:
 ```
 
 ### Expects
-#### *Optional* page `String`
-Use the `page` argument to pass in a value for the `page` property.
+ -  *(optional)* `string` page
+    - Use the `page` argument to pass in a value for the `page`
+      property.
 
 ### Example
 You want to track the number of page views in your application. You

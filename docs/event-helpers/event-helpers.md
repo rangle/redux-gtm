@@ -1,4 +1,4 @@
-## EventHelpers
+## `object` EventHelpers
 
 Helper functions for creating events with a specific shape.
 
