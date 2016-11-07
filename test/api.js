@@ -1,7 +1,7 @@
 const {
   createMiddleware,
   createMetaReducer,
-  eventHelpers: {
+  EventHelpers: {
     createGAevent,
     createGApageview,
   },

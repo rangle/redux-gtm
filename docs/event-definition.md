@@ -1,33 +1,34 @@
-## eventDefinition `Object`
-Used by ReduxGTM to generate an event for a given Redux action.
+## eventDefinition `object`
+Used by ReduxGTM to generate an event for a given action.
 
 ```js
-    {
-     eventName: 'my-app-page-view',
-     eventFields: (prevState, action) => ({
-       route: action.payload.location.pathname,
-     }),
-     eventSchema: {
-       event: value => typeof value === 'string',
-       route: value => typeof value === 'string',
-     },
-    }
+const eventDefinition = {
+  eventName: 'my-app-page-view',
+  eventFields: (prevState, action) => ({
+    route: action.payload.location.pathname,
+  }),
+  eventSchema: {
+    event: value => typeof value === 'string',
+    route: value => typeof value === 'string',
+  },
+};
 ```
 
-#### eventDefinition.eventName (Optional) `String`
+#### `string` *(optional)* eventDefinition.eventName
 Use this property to specify the name of the event you want to emit
-for the associated Redux action. If not provided, the event name
-defaults to the Redux action type.
+for the associated action. If not provided, the event name defaults to
+the action type.
 
-#### eventDefinition.eventFields (Optional) `Function`
+#### `function` *(optional)* eventDefinition.eventFields
 Attach a function to this property to define any variables you would
 like to emit with the event. Any function assigned to this property
 will receive the state of the application (before the action), and the
-associated action object. Any properties in the object returned by the
-attached function will be emitted along with the event.
+associated action object. Any property named "event" in the returned
+object will override any defaults or any event names defined in
+`eventName`.
 
-#### eventDefinition.eventSchema (Optional) `Object`
+#### `object` *(optional)* eventDefinition.eventSchema
 Use this property to define a schema for the event. Attach validation
 functions for each property in the event that you want to validate. If
-any of these validation functions return false, the event will not be
-emitted.
+any of these validation functions return false, ReduxGTM will not emit
+the event.
