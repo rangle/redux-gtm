@@ -1,18 +1,20 @@
-## ReduxGTM.createMiddleware(eventDefinitions, [dataLayer]) `Function`
+## createMiddleware(eventDefinitionsMap, [dataLayer]) `Function`
+
 ### Returns
-Redux middleware that synchronizes actions to Google Tag Manager events.
+[Redux middleware](http://redux.js.org/docs/advanced/Middleware.html#the-final-approach)
+that synchronizes actions to Google Tag Manager events.
+
 ### Expects
-#### eventDefinitions (Required) `Object`
-Used by ReduxGTM to map Redux actions to events. The following example
-shows how you would map the `PRODUCT_PURCHASED` action to the
-`checkoutComplete` event.
+#### [eventDefinitionsMap](event-definitions-map.md) `Object`
+#### *Optional* dataLayer `Object`
 
+### Example
 ```js
-{
-  'PRODUCT_PURCHASED': { eventName: 'checkoutComplete' }
-}
-```
+import { createMiddleware } from 'redux-gtm';
 
-##### Notes
- - Each key must be a valid Redux action type
- - Each property must be a valid [eventDefinition](event-definition.md)
+const eventDefinitionsMap = {
+   'SOME_REDUX_ACTION': { eventName: 'some-gtm-event' },
+};
+
+const middleware = createMiddleware(eventDefinitionsMap);
+```

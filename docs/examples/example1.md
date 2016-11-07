@@ -23,7 +23,7 @@ the `LOCATION_CHANGE` constant exposed by `react-router-redux`.
 
 import { LOCATION_CHANGE } from 'react-router-redux';
 
-const eventDefinitions = {
+const eventDefinitionsMap = {
   [LOCATION_CHANGE]: {
     eventName: 'my-app-page-view' // The name of the custom GTM event
     eventFields: (prevState, action) => ({
@@ -33,7 +33,7 @@ const eventDefinitions = {
   },
 }
 
-export default eventDefinitions;
+export default eventDefinitionsMap;
 ```
 
 Next, create the middleware using `createMiddleware` and your event
@@ -43,11 +43,11 @@ definitions. Then apply the middleware when creating the Redux store.
 // wherever you are creating the Redux store
 
 import { createMiddleware } from 'redux-gtm'; // **
-import eventDefinitions from './event-definitions'; // **
+import eventDefinitionsMap from './event-definitions'; // **
 import { createStore } from 'redux';
 import reducer from './reducer';
 
-const analyticsMiddleware = createMiddleware(eventDefinitions);
+const analyticsMiddleware = createMiddleware(eventDefinitionsMap);
 
 const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
 ```

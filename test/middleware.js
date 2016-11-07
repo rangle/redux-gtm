@@ -13,9 +13,9 @@ describe('Redux GTM middleware', () => {
     return state;
   };
 
-  describe('createMiddleware(actionsToTrack)', () => {
+  describe('createMiddleware(eventDefinitionsMap)', () => {
     it('Pushes analytics events to window.dataLayer', () => {
-      const actionsToTrack = {
+      const eventDefinitionsMap = {
         FORM_FILL_ENDED: {
           eventName: 'user-form-input',
           eventFields(prevState, action) {
@@ -41,7 +41,7 @@ describe('Redux GTM middleware', () => {
       };
 
       // create a Redux store with the reduxGTM middleware
-      const analyticsMiddleware = createMiddleware(actionsToTrack);
+      const analyticsMiddleware = createMiddleware(eventDefinitionsMap);
       const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
 
       expect(window.dataLayer).toBeUndefined();
@@ -49,7 +49,7 @@ describe('Redux GTM middleware', () => {
       // dispatch an untracked action
       store.dispatch({ type: 'SOME_UNTRACKED_ACTION' });
 
-      // It only tracks events defined in actionsToTrack
+      // It only tracks events defined in eventDefinitionsMap
       expect(window.dataLayer).toEqual([]);
 
       // dispatch a tracked action
@@ -79,9 +79,9 @@ describe('Redux GTM middleware', () => {
     });
   });
 
-  describe('createMiddlware(actionsToTrack, customDataLayer', () => {
+  describe('createMiddlware(eventDefinitionsMap, customDataLayer', () => {
     it('Pushes analytics events to the customDataLayer', () => {
-      const actionsToTrack = {
+      const eventDefinitionsMap = {
         FORM_FILL_ENDED: {
           eventName: 'user-form-input',
         },
@@ -90,7 +90,7 @@ describe('Redux GTM middleware', () => {
       const customDataLayer = {
         push: jest.fn(),
       };
-      const analyticsMiddleware = createMiddleware(actionsToTrack, customDataLayer);
+      const analyticsMiddleware = createMiddleware(eventDefinitionsMap, customDataLayer);
       const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
 
       store.dispatch({ type: 'FORM_FILL_ENDED' });

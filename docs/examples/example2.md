@@ -11,7 +11,7 @@ The event definitions then will look something like this:
 ```js
 // event-definitions.js
 
-export const eventDefinitions = {
+export const eventDefinitionsMap = {
   BOOK_TIME_OFF_FAILURE: {
     eventFields: (state, action) => ({
       // eventName: 'BOOK_TIME_OFF_FAILURE',
@@ -37,11 +37,11 @@ definitions. Then apply the middleware when creating the Redux store.
 // wherever you are creating the Redux store
 
 import { createMiddleware } from 'redux-gtm';
-import eventDefinitions from './event-definitions';
+import eventDefinitionsMap from './event-definitions';
 import { createStore } from 'redux';
 import reducer from './reducer';
 
-const analyticsMiddleware = createMiddleware(eventDefinitions);
+const analyticsMiddleware = createMiddleware(eventDefinitionsMap);
 const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
 ```
 
