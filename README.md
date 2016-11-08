@@ -12,7 +12,7 @@ Google Tag Manager integration for Redux and ngrx/store
 
  - An app using [Redux](http://redux.js.org/) or [ngrx/store](https://github.com/ngrx/store) to manage state
  - A Google Tag Manager account
- - (Web) A [container snippet](https://developers.google.com/tag-manager/quickstart) in your app's html.
+ -  A [container snippet](https://developers.google.com/tag-manager/quickstart) in your app's html _(Web)_
 
 ### Installation
 
