@@ -6,7 +6,7 @@ A [meta reducer](https://gist.github.com/btroncone/a6e4347326749f938510#implemen
 
 ### Expects
 ##### `object` [eventDefinitionsMap](event-definitions-map.md)
-##### `object` *(optional)* dataLayer
+##### `object` *(optional)* [dataLayer](data-layer.md)
 
 ### Example
 ```js

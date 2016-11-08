@@ -6,7 +6,7 @@ that synchronizes actions to Google Tag Manager events.
 
 ### Expects
 ##### `object` [eventDefinitionsMap](event-definitions-map.md)
-##### `object` *(optional)* dataLayer
+##### `object` *(optional)* [dataLayer](data-layer.md)
 
 ### Example
 ```js
