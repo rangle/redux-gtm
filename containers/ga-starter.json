@@ -1,15 +1,15 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2016-11-04 15:21:27",
+    "exportTime": "2016-11-08 14:58:59",
     "containerVersion": {
         "accountId": "572863420",
         "containerId": "2776924",
-        "containerVersionId": "1",
+        "containerVersionId": "3",
         "deleted": false,
         "container": {
             "accountId": "572863420",
             "containerId": "2776924",
-            "name": "ga-starter-container",
+            "name": "ga-starter",
             "publicId": "GTM-TXG848",
             "timeZoneCountryId": "US",
             "timeZoneId": "America/Los_Angeles",
@@ -17,14 +17,14 @@
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1478114505593",
+            "fingerprint": "1478616357479",
             "tagManagerUrl": "localhost:9001/#/container/accounts/572863420/containers/2776924/workspaces?apiLink=container"
         },
         "tag": [
             {
                 "accountId": "572863420",
                 "containerId": "2776924",
-                "tagId": "2",
+                "tagId": "3",
                 "name": "GAEvents",
                 "type": "ua",
                 "liveOnly": false,
@@ -90,16 +90,16 @@
                         "value": "{{GA_TRACKING_ID}}"
                     }
                 ],
-                "fingerprint": "1478113837706",
+                "fingerprint": "1478616301170",
                 "firingTriggerId": [
-                    "6"
+                    "9"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT"
             },
             {
                 "accountId": "572863420",
                 "containerId": "2776924",
-                "tagId": "1",
+                "tagId": "4",
                 "name": "GAPageViews",
                 "type": "ua",
                 "liveOnly": false,
@@ -118,6 +118,27 @@
                         "type": "BOOLEAN",
                         "key": "useDebugVersion",
                         "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "page"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{page}}"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "type": "BOOLEAN",
@@ -150,9 +171,9 @@
                         "value": "{{GA_TRACKING_ID}}"
                     }
                 ],
-                "fingerprint": "1478113799370",
+                "fingerprint": "1478617022715",
                 "firingTriggerId": [
-                    "5"
+                    "10"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT"
             }
@@ -161,7 +182,7 @@
             {
                 "accountId": "572863420",
                 "containerId": "2776924",
-                "triggerId": "6",
+                "triggerId": "9",
                 "name": "Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
@@ -198,12 +219,12 @@
                         ]
                     }
                 ],
-                "fingerprint": "1478113757456"
+                "fingerprint": "1478616301167"
             },
             {
                 "accountId": "572863420",
                 "containerId": "2776924",
-                "triggerId": "5",
+                "triggerId": "10",
                 "name": "PageView",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
@@ -240,7 +261,7 @@
                         ]
                     }
                 ],
-                "fingerprint": "1478113711397"
+                "fingerprint": "1478616301168"
             }
         ],
         "variable": [
@@ -257,7 +278,7 @@
                         "value": "UA-XXXXXX-YY"
                     }
                 ],
-                "fingerprint": "1478113394420"
+                "fingerprint": "1478616326211"
             },
             {
                 "accountId": "572863420",
@@ -472,7 +493,7 @@
                 "isEnabled": true
             }
         ],
-        "fingerprint": "1478272668022",
-        "tagManagerUrl": "localhost:9001/#/versions/accounts/572863420/containers/2776924/versions/1?apiLink=version"
+        "fingerprint": "1478617028413",
+        "tagManagerUrl": "localhost:9001/#/versions/accounts/572863420/containers/2776924/versions/3?apiLink=version"
     }
 }
