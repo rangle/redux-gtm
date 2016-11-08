@@ -50,21 +50,23 @@ export function createMiddleware(eventDefinitions: EventDefinitionsMap, dataLaye
  */
 export function createMetaReducer(eventDefinitions: EventDefinitionsMap, dataLayer?: any): any;
 
-export interface GAeventProperties {
-  eventAction?: string,
-  eventCategory?: string,
-  eventLabel?: string,
-  eventValue?: string,
+declare namespace EventHelpers {
+  interface GAeventProperties {
+    eventAction?: string,
+    eventCategory?: string,
+    eventLabel?: string,
+    eventValue?: string,
+  }
+
+  /**
+   * Create an event compatible with Google Analtyics.
+   * Use with the ga-starter container
+   */
+  function createGAevent(eventProps?: GAeventProperties): any;
+
+  /**
+   * Create a page view event compatible with Google Analtyics.
+   * Use with the ga-starter container
+   */
+  function createGApageview(page?: string): any;
 }
-
-/**
- * Create an event compatible with Google Analtyics.
- * Use with the ga-starter container
- */
-export function createGAevent(eventProps?: GAeventProperties): any;
-
-/**
- * Create a page view event compatible with Google Analtyics.
- * Use with the ga-starter container
- */
-export function createGApageview(page?: string): any;

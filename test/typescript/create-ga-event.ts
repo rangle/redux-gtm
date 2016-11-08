@@ -1,8 +1,8 @@
-import { createGAevent } from '../../index.d';
+import { EventHelpers } from '../../index.d';
 
-createGAevent();
+EventHelpers.createGAevent();
 
-createGAevent({
+EventHelpers.createGAevent({
   eventAction: 'action',
   eventCategory: 'category',
   eventLabel: 'label',
