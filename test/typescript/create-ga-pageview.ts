@@ -1,5 +1,5 @@
-import { createGApageview } from '../../index.d';
+import { EventHelpers } from '../../index.d';
 
-createGApageview();
+EventHelpers.createGApageview();
 
-createGApageview('/home');
+EventHelpers.createGApageview('/home');
