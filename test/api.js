@@ -5,7 +5,7 @@ const {
     createGAevent,
     createGApageview,
   },
-} = require('../lib');
+} = require('../src');
 
 describe('API', () => {
   it('Exposes ReduxGTM correctly', () => {

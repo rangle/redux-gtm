@@ -1,4 +1,4 @@
-const validateEvent = require('../lib/validate-event');
+const validateEvent = require('../src/validate-event');
 
 describe('validateEvent(event, eventDefinition)', () => {
   it('Returns true if there is no event schema', () => {

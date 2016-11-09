@@ -1,5 +1,5 @@
 const { createStore, applyMiddleware } = require('redux');
-const createMiddleware = require('../lib/create-middleware');
+const createMiddleware = require('../src/create-middleware');
 
 describe('Redux GTM middleware', () => {
   const initialState = {
