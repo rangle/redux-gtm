@@ -9,7 +9,10 @@
     "test:watch": "npm test -- --watch",
     "test:cov": "npm test -- --coverage",
     "lint": "eslint src test",
-    "check": "npm run lint && npm run test"
+    "check": "npm run lint && npm run test",
+    "prebuild": "rm -rf lib && mkdir lib",
+    "build": "babel src --out-dir lib",
+    "prepublish": "npm run build"
   },
   "engines": {
     "node": ">=6.2.0"
@@ -27,6 +30,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
     "eslint": "^3.8.1",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^2.0.1",

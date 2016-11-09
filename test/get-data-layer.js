@@ -1,5 +1,5 @@
-const getDataLayer = require('../lib/get-data-layer');
-const { NO_WINDOW_WARNING } = require('../lib/messages');
+const getDataLayer = require('../src/get-data-layer');
+const { NO_WINDOW_WARNING } = require('../src/messages');
 
 describe('getDataLayer(window, customDataLayer)', () => {
   describe('When a custom data layer is not provided', () => {

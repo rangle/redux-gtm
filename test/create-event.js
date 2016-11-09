@@ -1,4 +1,4 @@
-const createEvent = require('../lib/create-event');
+const createEvent = require('../src/create-event');
 
 describe('createEvent(eventDefinition, prevState, action)', () => {
   // createEvent takes in an event definition, a state object,

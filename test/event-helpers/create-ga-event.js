@@ -1,4 +1,4 @@
-const createGAevent = require('../../lib/event-helpers/create-ga-event');
+const createGAevent = require('../../src/event-helpers/create-ga-event');
 
 describe('createGAevent(eventProps)', () => {
   it('Creates an event with the proper keys', () => {

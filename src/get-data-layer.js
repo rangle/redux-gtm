@@ -1,6 +1,6 @@
 const { NO_WINDOW_WARNING } = require('./messages');
 
-function getDataLayer (window, customDataLayer) {
+function getDataLayer(window, customDataLayer) {
   if (customDataLayer !== undefined && typeof customDataLayer.push === 'function') {
     return customDataLayer;
   }
