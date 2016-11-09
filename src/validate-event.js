@@ -6,7 +6,7 @@ function validateEvent(event, eventDefinition) {
   }
 
   const eventKeys = Object.keys(eventDefinition.eventSchema);
-  const isValid = (key) => eventDefinition.eventSchema[key](event[key]);
+  const isValid = key => eventDefinition.eventSchema[key](event[key]);
   return eventKeys.every(isValid);
 }
 

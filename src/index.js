@@ -10,5 +10,5 @@ module.exports = {
   EventHelpers: {
     createGAevent,
     createGApageview,
-  }
+  },
 };
