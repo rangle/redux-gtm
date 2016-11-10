@@ -1,4 +1,4 @@
-const { createStore, applyMiddleware } = require('redux');
+const { createStore } = require('redux');
 const createMetaReducer = require('../src/create-meta-reducer');
 
 describe('Redux GTM meta reducer', () => {
@@ -13,7 +13,7 @@ describe('Redux GTM meta reducer', () => {
     const gtmMetaReducer = createMetaReducer(eventDefinitionsMap);
 
     expect(window.dataLayer).toBeUndefined();
-    const store = createStore(gtmMetaReducer(reducer));
+    createStore(gtmMetaReducer(reducer));
     expect(window.dataLayer).toBeDefined();
     expect(window.dataLayer).toEqual([]);
   });
