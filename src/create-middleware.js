@@ -2,22 +2,29 @@ const createEvent = require('./create-event');
 const validateEvent = require('./validate-event');
 const getDataLayer = require('./get-data-layer');
 
-const createMiddleware = (actionsToTrack, customDataLayer) => store => next => (action) => {
+const createMiddleware = (eventDefinitionsMap, customDataLayer) => store => next => (action) => {
   const dataLayer = getDataLayer(window, customDataLayer);
 
-  const eventDefinition = actionsToTrack[action.type];
-
-  if (dataLayer === undefined || !eventDefinition) {
+  if (dataLayer === undefined || !eventDefinitionsMap[action.type]) {
     return next(action);
   }
 
   const prevState = store.getState();
-  const event = createEvent(eventDefinition, prevState, action);
 
-  const isValidEvent = validateEvent(event, eventDefinition);
+  const pushEventToDataLayer = (eventDefinition) => {
+    const event = createEvent(eventDefinition, prevState, action);
+    const isValidEvent = validateEvent(event, eventDefinition);
+    if (isValidEvent) {
+      dataLayer.push(event);
+    }
+  };
 
-  if (isValidEvent) {
-    dataLayer.push(event);
+  if (Array.isArray(eventDefinitionsMap[action.type])) {
+    const eventDefinitions = eventDefinitionsMap[action.type];
+    eventDefinitions.forEach(eventDefinition => pushEventToDataLayer(eventDefinition));
+  } else {
+    const eventDefinition = eventDefinitionsMap[action.type];
+    pushEventToDataLayer(eventDefinition);
   }
 
   return next(action);
