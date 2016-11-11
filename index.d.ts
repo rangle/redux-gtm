@@ -26,18 +26,14 @@ export interface EventSchema {
  * to validate. If any of these validation functions return false, the
  * event will not be emitted.
  */
-export interface EventDefinition {
-  eventName?: string;
-  eventFields? (prevState: any, action: any): any;
-  eventSchema?: EventSchema;
-}
+export type EventDefinition = { eventName: string } | { eventFields(prevState: any, action: any): any } | { eventSchema: EventSchema };
 
 /**
  * A map between your Redux actions and your analytics events.  Each
  * key must be a Redux action type.
  */
 export interface EventDefinitionsMap {
-  [key: string]: EventDefinition;
+  [key: string]: EventDefinition | Array<EventDefinition>;
 }
 
 /**
