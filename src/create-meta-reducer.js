@@ -1,5 +1,4 @@
-const createEvent = require('./create-event');
-const validateEvent = require('./validate-event');
+const createEvents = require('./create-events');
 const getDataLayer = require('./get-data-layer');
 
 const createMetaReducer = (eventDefinitionsMap, customDataLayer) => reducer => (state, action) => {
@@ -11,21 +10,8 @@ const createMetaReducer = (eventDefinitionsMap, customDataLayer) => reducer => (
     return result;
   }
 
-  const pushEventToDataLayer = (eventDefinition) => {
-    const event = createEvent(eventDefinition, state, action);
-    const isValidEvent = validateEvent(event, eventDefinition);
-    if (isValidEvent) {
-      dataLayer.push(event);
-    }
-  };
-
-  if (Array.isArray(eventDefinitionsMap[action.type])) {
-    const eventDefinitions = eventDefinitionsMap[action.type];
-    eventDefinitions.forEach(eventDefinition => pushEventToDataLayer(eventDefinition));
-  } else {
-    const eventDefinition = eventDefinitionsMap[action.type];
-    pushEventToDataLayer(eventDefinition);
-  }
+  const events = createEvents(eventDefinitionsMap[action.type], state, action);
+  events.filter(event => typeof event !== 'string').forEach(event => dataLayer.push(event));
 
   return result;
 };
