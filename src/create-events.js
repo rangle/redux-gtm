@@ -1,5 +1,5 @@
 function createEvents(eventDefinitions, prevState, action) {
-  const asArray = value => ( Array.isArray(value) ? value : [value] );
+  const asArray = value => (Array.isArray(value) ? value : [value]);
 
   return asArray(eventDefinitions).map(({ eventName, eventFields, eventSchema }) => {
     const name = { event: eventName || action.type };
