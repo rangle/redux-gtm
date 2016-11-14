@@ -1,14 +1,14 @@
 function createEvents(eventDefinitions, prevState, action) {
-  const asArray = value => Array.isArray(value) ? value : [value];
+  const asArray = value => ( Array.isArray(value) ? value : [value] );
 
   return asArray(eventDefinitions).map(({ eventName, eventFields, eventSchema }) => {
-    const head = { event: eventName || action.type };
-    const payload = typeof eventFields === 'function' ? eventFields(prevState, action) : {};
+    const name = { event: eventName || action.type };
+    const fields = typeof eventFields === 'function' ? eventFields(prevState, action) : {};
 
-    const event = Object.assign(head, payload);
+    const event = Object.assign(name, fields);
 
     if (eventSchema !== undefined) {
-      const eventPropIsValid = key => eventSchema[key](event[key]);
+      const eventPropIsValid = prop => eventSchema[prop](event[prop]);
       const isValid = Object.keys(eventSchema).every(eventPropIsValid);
       if (isValid) {
         return event;

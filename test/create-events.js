@@ -47,7 +47,7 @@ describe('createEvents(eventDefinitions, prevState, action)', () => {
       expect(eventDefinitions.eventFields).toHaveBeenCalledWith(prevState, action);
     });
     it('Merges any object returned by eventFields into the new event', () => {
-      const eventDefinitions = { eventFields: () => ({ prop: 'value 1' })};
+      const eventDefinitions = { eventFields: () => ({ prop: 'value 1' }) };
       const prevState = {};
       const action = { type: 'SOME_ACTION_TYPE' };
 
