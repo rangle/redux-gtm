@@ -4,9 +4,9 @@
 [Redux middleware](http://redux.js.org/docs/advanced/Middleware.html#the-final-approach)
 that synchronizes actions to Google Tag Manager events.
 
-### Expects
+### Parameters
 ##### `object` [eventDefinitionsMap](event-definitions-map.md)
-##### `object` *(optional)* [dataLayer](data-layer.md)
+##### `object` *(optional)* [options](options.md)
 
 ### Example
 ```js
