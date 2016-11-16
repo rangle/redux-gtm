@@ -1,8 +1,8 @@
 const createEvents = require('./create-events');
 const getDataLayer = require('./get-data-layer');
 
-const createMiddleware = (eventDefinitionsMap, customDataLayer) => store => next => (action) => {
-  const dataLayer = getDataLayer(window, customDataLayer);
+const createMiddleware = (eventDefinitionsMap, options = {}) => store => next => (action) => {
+  const dataLayer = getDataLayer(window, options.customDataLayer);
 
   if (dataLayer === undefined || !eventDefinitionsMap[action.type]) {
     return next(action);

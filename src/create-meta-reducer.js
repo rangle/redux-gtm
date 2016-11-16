@@ -1,8 +1,8 @@
 const createEvents = require('./create-events');
 const getDataLayer = require('./get-data-layer');
 
-const createMetaReducer = (eventDefinitionsMap, customDataLayer) => reducer => (state, action) => {
-  const dataLayer = getDataLayer(window, customDataLayer);
+const createMetaReducer = (eventDefinitionsMap, options = {}) => reducer => (state, action) => {
+  const dataLayer = getDataLayer(window, options.customDataLayer);
 
   const result = reducer(state, action);
 
