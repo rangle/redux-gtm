@@ -24,7 +24,8 @@ application. You have an action `REQUEST_ERROR` that dispatches with
 an http status code as its payload whenever there's a failed request.
 
 ```js
-import { EventHelpers: { createGAevent } } from 'redux-gtm';
+import { EventHelpers } from 'redux-gtm';
+const { createGAevent } = EventHelpers;
 
 const eventDefinitionsMap = {
   REQUEST_ERROR: {

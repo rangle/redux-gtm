@@ -60,8 +60,8 @@ ReduxGTM will emit `some-gtm-custom-event` to Google Tag Manager.
  - [How to do mini surveys](docs/examples/example3.md)
 
 ## API
- - [createMiddleware](docs/create-middleware.md)([eventDefinitionsMap](docs/event-definitions-map.md), [[dataLayer]](docs/data-layer.md))
- - [createMetaReducer](docs/create-meta-reducer.md)([eventDefinitionsMap](docs/event-definitions-map.md), [[dataLayer]](docs/data-layer.md))
+ - [createMiddleware](docs/create-middleware.md)([eventDefinitionsMap](docs/event-definitions-map.md), [[options]](docs/options.md))
+ - [createMetaReducer](docs/create-meta-reducer.md)([eventDefinitionsMap](docs/event-definitions-map.md), [[options]](docs/options.md))
  - [EventHelpers](docs/event-helpers/event-helpers.md)
    - [createGAevent](docs/event-helpers/create-ga-event.md)
    - [createGApageview](docs/event-helpers/create-ga-pageview.md)

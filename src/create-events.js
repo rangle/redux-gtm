@@ -17,7 +17,7 @@ function createEvents(eventDefinitions, prevState, action) {
     }
 
     return event;
-  });
+  }).filter(event => typeof event !== 'string');
 }
 
 module.exports = createEvents;

@@ -20,7 +20,8 @@ have an action `ROUTE_CHANGED` that dispatches with a route as its
 payload whenever your app's view changes.
 
 ```js
-import { EventHelpers: { createGApageview } } from 'redux-gtm';
+import { EventHelpers } from 'redux-gtm';
+const { createGApageview } = EventHelpers;
 
 const eventDefinitionsMap = {
   ROUTE_CHANGED: {
