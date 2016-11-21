@@ -1,7 +1,7 @@
 const { createStore } = require('redux');
 const createMetaReducer = require('../src/create-meta-reducer');
 
-describe('Meta reducer', () => {
+describe('createMetaReducer(eventDefinitionsMap, [options])', () => {
   beforeEach(() => {
     // The middleware has one side affect: to update the data layer.
     window.dataLayer = undefined;
@@ -10,13 +10,13 @@ describe('Meta reducer', () => {
   describe('When a window.dataLayer variable does not exist', () => {
     it('creates a window.dataLayer variable and sets it to an empty array', () => {
       const reducer = state => state;
-      const eventDefinitionsMap = {};
+      const eventDefinitionsMap = { SOME_ACTION: {} };
       const gtmMetaReducer = createMetaReducer(eventDefinitionsMap);
+      const store = createStore(gtmMetaReducer(reducer));
 
       expect(window.dataLayer).toBeUndefined();
-      createStore(gtmMetaReducer(reducer));
+      store.dispatch({ type: 'SOME_ACTION' });
       expect(window.dataLayer).toBeDefined();
-      expect(window.dataLayer).toEqual([]);
     });
   });
 
@@ -119,6 +119,97 @@ describe('Meta reducer', () => {
       store.dispatch({ type: 'SOME_REDUX_ACTION' });
       const actual = window.dataLayer;
       expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('When an action does not have an associated event definition', () => {
+    const gtmMetaReducer = createMetaReducer({});
+    const reducer = state => state;
+
+    it('does not create a new data layer', () => {
+      const store = createStore(gtmMetaReducer(reducer));
+      store.dispatch({ type: 'SOME_REDUX_ACTION' });
+
+      const actual = window.dataLayer;
+      expect(actual).toBeUndefined();
+    });
+    it('does not mutate an existing data layer', () => {
+      const store = createStore(gtmMetaReducer(reducer));
+      window.dataLayer = [{ event: 'some-event' }];
+      store.dispatch({ type: 'SOME_REDUX_ACTION' });
+
+      const expected = [{ event: 'some-event' }]; // no change
+      const actual = window.dataLayer;
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('When a connectivitySelector is provided and the app is offline', () => {
+    const options = {
+      offlineStorage: { saveEvents: jest.fn() },
+      connectivitySelector: () => false,
+    };
+    const reducer = state => state;
+    const eventDefinitionsMap = { SOME_ACTION: {} };
+    const gtmMetaReducer = createMetaReducer(eventDefinitionsMap, options);
+
+    it('saves events to the provided offlineStorage option', () => {
+      const store = createStore(gtmMetaReducer(reducer));
+      store.dispatch({ type: 'SOME_ACTION' });
+
+      expect(options.offlineStorage.saveEvents).toHaveBeenCalledWith([{ event: 'SOME_ACTION' }]);
+    });
+
+    it('does not push events to the data layer', () => {
+      const store = createStore(gtmMetaReducer(reducer));
+      store.dispatch({ type: 'SOME_ACTION' });
+
+      const expected = [];
+      const actual = window.dataLayer;
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('When a connectivitySelector is provided and the app is online', () => {
+    it('purges events from offlineStorage', () => {
+      const options = {
+        offlineStorage: { purgeEvents: jest.fn(() => Promise.resolve([])) },
+        connectivitySelector: () => true,
+      };
+      const reducer = state => state;
+      const eventDefinitionsMap = { SOME_ACTION: {} };
+      const gtmMetaReducer = createMetaReducer(eventDefinitionsMap, options);
+      const store = createStore(gtmMetaReducer(reducer));
+
+      store.dispatch({ type: 'SOME_ACTION' });
+      expect(options.offlineStorage.purgeEvents).toHaveBeenCalled();
+    });
+
+    it('saves any events from offlineStorage to the data layer', () => {
+      // This isn't the greatest integration test for createMiddleware.
+      // The issue is that offline events are pushed to the data layer
+      // asynchronously. So I ended up attaching the assertion to the
+      // window.dataLayer.push stub. It's gross, I know.
+      const expected = { event: 'some-old-event' };
+      window.dataLayer = {
+        push: (event) => {
+          if (event.event !== 'SOME_ACTION') {
+            expect(event).toEqual(expected);
+          }
+        },
+      };
+      const options = {
+        offlineStorage: {
+          purgeEvents: () => Promise.resolve([{ event: 'some-old-event' }]),
+        },
+        connectivitySelector: () => true,
+      };
+      const reducer = state => state;
+      const eventDefinitionsMap = { SOME_ACTION: {} };
+      const gtmMetaReducer = createMetaReducer(eventDefinitionsMap, options);
+      const store = createStore(gtmMetaReducer(reducer));
+
+      store.dispatch({ type: 'SOME_ACTION' });
     });
   });
 });
