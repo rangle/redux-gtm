@@ -36,7 +36,13 @@ const store = createStore(combinedReducer, applyMiddleware(gtmMiddleware));
 ```
 
 ## connectivitySelector
-...
+A selector function that accepts the redux state, and returns a
+connectivity boolean. ReduxGTM uses this connectivity boolean to
+determine whether or not your app is offline. ReduxGTM expects the
+connectivity boolean to be `true` when your app is online, and `false`
+when your app is offline.
 
 ## offlineStorage
-...
+A constructor for an offline storage abstraction (e.g. IndexDB and
+AsyncStorage/ReactNative). ReduxGTM will store events here when
+offline, and retrieve stored events from here when back online.
