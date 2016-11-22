@@ -15,7 +15,6 @@ describe('registerEvents(events, dataLayer, state, extensions, action)', () => {
 
   describe('When provided with an offline storage extension', () => {
     describe('When the app is offline', () => {
-      const state = { isConnected: false };
       const dataLayer = { push: jest.fn() };
       const events = [{ event: 'some-event' }, { event: 'some-other-event' }];
       const extensions = {
@@ -24,6 +23,7 @@ describe('registerEvents(events, dataLayer, state, extensions, action)', () => {
           isConnected: state => state.isConnected,
         },
       };
+      const state = { isConnected: false };
       registerEvents(events, dataLayer, state, extensions);
 
       it('pushes events to offline storage', () => {
@@ -99,7 +99,7 @@ describe('registerEvents(events, dataLayer, state, extensions, action)', () => {
       const events = [{ event: 'some-event' }];
       const action = { type: 'SOME_ACTION' };
       const state = {};
-      const dataLayer = { push(){} };
+      const dataLayer = { push() {} };
       registerEvents(events, dataLayer, state, extensions, action);
 
       expect(extensions.logger.log).toHaveBeenCalledWith(events, action, state);

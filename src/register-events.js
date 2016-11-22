@@ -19,7 +19,7 @@ function registerEvents(events, dataLayer, state, extensions, action) {
     const isConnected = offlineStorage.isConnected(state);
     if (!isConnected) {
       offlineStorage.saveEvents(events)
-                    .then(savedEvents => {
+                    .then((savedEvents) => {
                       logEvents(savedEvents, action, state, true, false);
                     });
     } else {
@@ -27,7 +27,7 @@ function registerEvents(events, dataLayer, state, extensions, action) {
       logEvents(events, action, state);
       offlineStorage.purgeEvents()
                     .then(pushEventsToDataLayer)
-                    .then(oldEvents => {
+                    .then((oldEvents) => {
                       logEvents(oldEvents, action, state, false, true);
                     });
     }
