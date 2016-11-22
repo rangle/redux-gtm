@@ -1,13 +1,18 @@
-# options
+# extensions
+
+There are three types of extensions supported by ReduxGTM:
  - [customDataLayer](#customdatalayer)
- - [connectivitySelector](#connectivityselector)
  - [offlineStorage](#offlinestorage)
+ - [logger](#logger)
 
 ## customDataLayer
+An `Object`that ReduxGTM will push events to instead of the `window.dataLayer`.
 
-An `object` with a `push` method for adding events to a custom data
-layer. The push method must accept a plain event object as its first
-argument.
+### Properties
+
+#### `function` push
+ReduxGTM will call this function with each created event. The function
+should accept a plain event object as its first argument.
 
 ### Example
 
@@ -35,14 +40,18 @@ const gtmMiddleware = createMiddlware(eventDefinitionsMap, { customDataLayer });
 const store = createStore(combinedReducer, applyMiddleware(gtmMiddleware));
 ```
 
-## connectivitySelector
-A selector function that accepts the redux state, and returns a
-connectivity boolean. ReduxGTM uses this connectivity boolean to
-determine whether or not your app is offline. ReduxGTM expects the
-connectivity boolean to be `true` when your app is online, and `false`
-when your app is offline.
-
 ## offlineStorage
-A constructor for an offline storage abstraction (e.g. IndexDB and
-AsyncStorage/ReactNative). ReduxGTM will store events here when
-offline, and retrieve stored events from here when back online.
+An `Object` that ReduxGTM will use to determine whether or not your
+app is offline.
+
+### Properties
+
+#### `function` saveEvents(events)
+#### `function` purgeEvents()
+#### `function` isConnected(state)
+
+## logger
+
+### Properties
+
+#### `function` log(event, action, state)

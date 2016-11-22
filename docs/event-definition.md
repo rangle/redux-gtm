@@ -21,7 +21,7 @@ Use this property to specify the name of the event you want to emit
 for the associated action. If not provided, the event name defaults to
 the action type.
 
-#### `function` eventFields *(optional)*
+#### `function` eventFields(prevState, action) *(optional)*
 Attach a function to this property to define any variables you would
 like to emit with the event. Any function assigned to this property
 will receive the state of the application (before the action), and the
