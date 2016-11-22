@@ -1,7 +1,7 @@
 const { createStore, applyMiddleware } = require('redux');
 const createMiddleware = require('../src/create-middleware');
 
-describe('createMiddleware(eventDefinitionsMap, [options])', () => {
+describe('createMiddleware(eventDefinitionsMap, [extensions])', () => {
   beforeEach(() => {
     // The middleware has one side affect: to update the data layer.
     window.dataLayer = undefined;
@@ -144,20 +144,22 @@ describe('createMiddleware(eventDefinitionsMap, [options])', () => {
     });
   });
 
-  describe('When a connectivitySelector is provided and the app is offline', () => {
-    const options = {
-      offlineStorage: { saveEvents: jest.fn() },
-      connectivitySelector: () => false,
+  describe('When an offlineStorage extension is provided and the app is offline', () => {
+    const extensions = {
+      offlineStorage: {
+        saveEvents: jest.fn(),
+        isConnected: () => false,
+      },
     };
     const reducer = state => state;
     const eventDefinitionsMap = { SOME_ACTION: {} };
-    const gtmMiddleware = createMiddleware(eventDefinitionsMap, options);
+    const gtmMiddleware = createMiddleware(eventDefinitionsMap, extensions);
 
     it('saves events to the provided offlineStorage option', () => {
       const store = createStore(reducer, applyMiddleware(gtmMiddleware));
       store.dispatch({ type: 'SOME_ACTION' });
 
-      expect(options.offlineStorage.saveEvents).toHaveBeenCalledWith([{ event: 'SOME_ACTION' }]);
+      expect(extensions.offlineStorage.saveEvents).toHaveBeenCalledWith([{ event: 'SOME_ACTION' }]);
     });
 
     it('does not push events to the data layer', () => {
@@ -170,19 +172,21 @@ describe('createMiddleware(eventDefinitionsMap, [options])', () => {
     });
   });
 
-  describe('When a connectivitySelector is provided and the app is online', () => {
+  describe('When an offlineStorage extension is provided and the app is offline', () => {
     it('purges events from offlineStorage', () => {
-      const options = {
-        offlineStorage: { purgeEvents: jest.fn(() => Promise.resolve([])) },
-        connectivitySelector: () => true,
+      const extensions = {
+        offlineStorage: {
+          purgeEvents: jest.fn(() => Promise.resolve([])),
+          isConnected: () => true,
+        },
       };
       const reducer = state => state;
       const eventDefinitionsMap = { SOME_ACTION: {} };
-      const gtmMiddleware = createMiddleware(eventDefinitionsMap, options);
+      const gtmMiddleware = createMiddleware(eventDefinitionsMap, extensions);
       const store = createStore(reducer, applyMiddleware(gtmMiddleware));
 
       store.dispatch({ type: 'SOME_ACTION' });
-      expect(options.offlineStorage.purgeEvents).toHaveBeenCalled();
+      expect(extensions.offlineStorage.purgeEvents).toHaveBeenCalled();
     });
 
     it('saves any events from offlineStorage to the data layer', () => {
@@ -198,15 +202,15 @@ describe('createMiddleware(eventDefinitionsMap, [options])', () => {
           }
         },
       };
-      const options = {
+      const extensions = {
         offlineStorage: {
           purgeEvents: () => Promise.resolve([{ event: 'some-old-event' }]),
+          isConnected: () => true,
         },
-        connectivitySelector: () => true,
       };
       const reducer = state => state;
       const eventDefinitionsMap = { SOME_ACTION: {} };
-      const gtmMiddleware = createMiddleware(eventDefinitionsMap, options);
+      const gtmMiddleware = createMiddleware(eventDefinitionsMap, extensions);
       const store = createStore(reducer, applyMiddleware(gtmMiddleware));
 
       store.dispatch({ type: 'SOME_ACTION' });
