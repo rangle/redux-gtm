@@ -19,7 +19,7 @@ describe('registerEvents(events, dataLayer, state, extensions, action)', () => {
       const events = [{ event: 'some-event' }, { event: 'some-other-event' }];
       const extensions = {
         offlineStorage: {
-          saveEvents: jest.fn(() => ({ then: (callback) => callback(events) })),
+          saveEvents: jest.fn(() => ({ then: callback => callback(events) })),
           isConnected: state => state.isConnected,
         },
       };
@@ -80,7 +80,7 @@ describe('registerEvents(events, dataLayer, state, extensions, action)', () => {
         const state = {};
         it('pushes them to the data layer', () => {
           registerEvents(events, dataLayer, state, extensions);
-          expect(dataLayer.push).toHaveBeenCalledWith({ event: 'some-old-event'});
+          expect(dataLayer.push).toHaveBeenCalledWith({ event: 'some-old-event' });
         });
       });
 
@@ -126,7 +126,7 @@ describe('registerEvents(events, dataLayer, state, extensions, action)', () => {
         const extensions = {
           logger: { log: jest.fn() },
           offlineStorage: {
-            saveEvents: (eventsToSave) => ({
+            saveEvents: eventsToSave => ({
               then(callback) {
                 callback(eventsToSave);
               },
