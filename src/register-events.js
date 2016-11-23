@@ -26,9 +26,11 @@ function registerEvents(events, dataLayer, state, extensions, action) {
       pushEventsToDataLayer(events);
       logEvents(events, action, state);
       offlineStorage.purgeEvents()
-                    .then(pushEventsToDataLayer)
                     .then((oldEvents) => {
-                      logEvents(oldEvents, action, state, false, true);
+                      if (Array.isArray(oldEvents) && oldEvents.length > 0) {
+                        pushEventsToDataLayer(oldEvents);
+                        logEvents(oldEvents, action, state, false, true);
+                      }
                     });
     }
   } else {
