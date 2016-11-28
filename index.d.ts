@@ -68,3 +68,7 @@ declare namespace EventHelpers {
    */
   function createGApageview(page?: string): any;
 }
+
+declare namespace Extensions {
+  function logger(): any;
+}
