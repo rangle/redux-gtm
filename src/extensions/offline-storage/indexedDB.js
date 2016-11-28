@@ -25,10 +25,9 @@ function save(events, db) {
     const transaction = db.transaction(['EventsStore'], 'readwrite');
     const objectStore = transaction.objectStore('EventsStore');
 
-    objectStore.add(events);
-
-    transaction.onsuccess = () => resolve(events);
-    transaction.onerror = reject;
+    const addEvents = objectStore.add(events);
+    addEvents.onsuccess = () => resolve(events);
+    addEvents.onerror = reject;
   });
 }
 
