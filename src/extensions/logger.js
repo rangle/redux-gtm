@@ -32,7 +32,6 @@ function logger() {
       console.groupEnd();
     } else if (wasSavedOffline) {
       console.group('%c ReduxGTM (was offline)', styles.title.warning);
-      logAction(action);
       logEvents(events);
       console.groupEnd();
     } else {

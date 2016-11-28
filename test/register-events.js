@@ -179,7 +179,7 @@ describe('registerEvents(events, dataLayer, state, extensions, action)', () => {
           const action = {};
           registerEvents(events, dataLayer, state, extensions, action);
           expect(extensions.logger.log)
-            .toHaveBeenLastCalledWith(oldEvents, action, state, false, true);
+            .toHaveBeenLastCalledWith(oldEvents, null, null, false, true);
         });
       });
     });

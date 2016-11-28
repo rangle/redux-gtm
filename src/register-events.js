@@ -29,7 +29,7 @@ function registerEvents(events, dataLayer, state, extensions, action) {
                     .then((oldEvents) => {
                       if (Array.isArray(oldEvents) && oldEvents.length > 0) {
                         pushEventsToDataLayer(oldEvents);
-                        logEvents(oldEvents, action, state, false, true);
+                        logEvents(oldEvents, null, null, false, true);
                       }
                     });
     }
