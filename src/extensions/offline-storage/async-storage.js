@@ -4,7 +4,7 @@ function asyncStorage(AsyncStorage, isConnected) {
   const saveEvents = events =>
     AsyncStorage.getItem(STORE_KEY)
                 .then(JSON.parse)
-                .then(oldEvents => {
+                .then((oldEvents) => {
                   if (oldEvents) {
                     return oldEvents.concat(events);
                   }
