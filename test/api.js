@@ -18,6 +18,7 @@ describe('API', () => {
     // Extensions
     expect(logger).toBeDefined();
     expect(OfflineStorage.indexedDB).toBeDefined();
+    expect(OfflineStorage.asyncStorage).toBeDefined();
     // Event helpers
     expect(createGAevent).toBeDefined();
     expect(createGApageview).toBeDefined();

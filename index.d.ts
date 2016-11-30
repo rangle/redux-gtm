@@ -71,4 +71,9 @@ declare namespace EventHelpers {
 
 declare namespace Extensions {
   function logger(): any;
+  namespace OfflineStorage {
+    type ConnectivitySelector = (state: any) => boolean;
+    function indexedDB(isConnected: ConnectivitySelector): any;
+    function asyncStorage(AsyncStorage: any, isConnected: ConnectivitySelector): any;
+  }
 }
