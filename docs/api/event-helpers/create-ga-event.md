@@ -36,7 +36,7 @@ const eventDefinitionsMap = {
 ```
 
 Say your app experiences a request that fails with a `500` status
-code. ReduxGTM will emit the following event:
+code, ReduxGTM will emit the following event:
 
 ```js
 {

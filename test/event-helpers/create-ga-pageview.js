@@ -34,4 +34,21 @@ describe('createGApageview(page)', () => {
     const expected = 'unknown page';
     expect(actual).toBe(expected);
   });
+
+  it('Attaches the provided properties to the page', () => {
+    const pageProps = {
+      title: 'title',
+      location: 'location',
+    };
+    const actual = createGApageview('page', pageProps);
+    expect(actual.page).toBe('page');
+    expect(actual.title).toBe('title');
+    expect(actual.location).toBe('location');
+  });
+
+  it('Assigns default values to the pageProps when not provided', () => {
+    const actual = createGApageview();
+    expect(actual.title).toBe(undefined);
+    expect(actual.location).toBe(undefined);
+  });
 });
