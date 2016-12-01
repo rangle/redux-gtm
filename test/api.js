@@ -3,7 +3,8 @@ const {
   createMetaReducer,
   Extensions: {
     logger,
-    OfflineStorage,
+    offlineWeb,
+    offlineReactNative,
   },
   EventHelpers: {
     createGAevent,
@@ -17,8 +18,8 @@ describe('API', () => {
     expect(createMetaReducer).toBeDefined();
     // Extensions
     expect(logger).toBeDefined();
-    expect(OfflineStorage.indexedDB).toBeDefined();
-    expect(OfflineStorage.asyncStorage).toBeDefined();
+    expect(offlineWeb).toBeDefined();
+    expect(offlineReactNative).toBeDefined();
     // Event helpers
     expect(createGAevent).toBeDefined();
     expect(createGApageview).toBeDefined();

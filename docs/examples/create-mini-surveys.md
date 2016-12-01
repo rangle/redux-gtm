@@ -1,4 +1,4 @@
-## How to do mini surveys
+## Create Mini Surveys
 
 Let's say you want to run a simple survey 'Do you like sushi?' For that
 purpose you created an event in GTM called `do-you-like-sushi`. This event is

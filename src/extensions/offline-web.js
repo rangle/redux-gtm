@@ -52,7 +52,7 @@ function purge(db) {
   });
 }
 
-function indexedDB(isConnected) {
+function offlineWeb(isConnected) {
   return {
     saveEvents(events) {
       return openDB(DB_NAME, DB_VERSION).then(db => save(events, db));
@@ -64,4 +64,4 @@ function indexedDB(isConnected) {
   };
 }
 
-module.exports = indexedDB;
+module.exports = offlineWeb;

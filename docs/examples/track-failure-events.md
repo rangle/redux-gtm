@@ -1,4 +1,4 @@
-## How do I track failure events?
+## Track Failure Events
 
 Suppose you've created a custom event in Google Tag Manager (GTM) for
 tracking failure events `BOOK_TIME_OFF_FAILURE`. You also want to

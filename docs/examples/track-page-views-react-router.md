@@ -1,4 +1,4 @@
-## How do I pageviews when using React Router?
+## Track Page Views When Using React Router
 
 Suppose you've created a custom event in Google Tag Manager (GTM) for
 tracking page views: `my-app-page-view`. And the custom event triggers a
@@ -44,7 +44,7 @@ definitions. Then apply the middleware when creating the Redux store.
 
 import { createMiddleware } from 'redux-gtm'; // **
 import eventDefinitionsMap from './event-definitions'; // **
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducer';
 
 const analyticsMiddleware = createMiddleware(eventDefinitionsMap);

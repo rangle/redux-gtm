@@ -1,4 +1,4 @@
-## eventDefinitionsMap
+### `EventDefinitionsMap`
 `Object` used by ReduxGTM to map action types to [eventDefinitions](./event-definition.md).
 
 ```js
@@ -13,7 +13,7 @@ const eventDefinitionsMap = {
   'SOME_OTHER_ACTION_TYPE': [someOtherEventDefinition, anotherEventDefinition],
 };
 ```
-### Notes
+#### Notes
  - Each key in the eventDefinitionsMap must correspond to an action type.
  - Each property in the eventDefinitionsMap must be a valid
    [eventDefinition](./event-definition.md).

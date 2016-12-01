@@ -1,7 +1,6 @@
-## createGApageview(page)
+### `createGApageview(page)`
 
-### Returns
-A plain JavaScript object with the following properties:
+Returns a plain JavaScript object with the following properties:
 ```js
 {
   event: 'REDUX_GTM_GA_EVENT',
@@ -10,7 +9,7 @@ A plain JavaScript object with the following properties:
 }
 ```
 
-### Expects
+#### Parameters
 ##### `string` page *(optional)*
 Use the `page` argument to pass in a value for the `page` property.
 

@@ -71,9 +71,7 @@ declare namespace EventHelpers {
 
 declare namespace Extensions {
   function logger(): any;
-  namespace OfflineStorage {
-    type ConnectivitySelector = (state: any) => boolean;
-    function indexedDB(isConnected: ConnectivitySelector): any;
-    function asyncStorage(AsyncStorage: any, isConnected: ConnectivitySelector): any;
-  }
+  type ConnectivitySelector = (state: any) => boolean;
+  function offlineWeb(isConnected: ConnectivitySelector): any;
+  function offlineReactNative(AsyncStorage: any, isConnected: ConnectivitySelector): any;
 }
