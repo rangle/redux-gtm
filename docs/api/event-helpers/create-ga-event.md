@@ -1,7 +1,6 @@
-## createGAevent(eventProps)
+### `createGAevent(eventProps)`
 
-### Returns
-A plain JavaScript object with the following properties:
+Returns a plain JavaScript object with the following properties:
 ```js
 {
   event: 'REDUX_GTM_GA_EVENT',
@@ -13,12 +12,12 @@ A plain JavaScript object with the following properties:
 }
 ```
 
-### Expects
+#### Parameters
 ##### `object` eventProps *(optional)*
 Use the `eventProps` argument to pass in values for `eventAction`,
 `eventCategory`, `eventLabel`, and `eventValue`.
 
-### Example
+#### Example
 You want to track the number of failed requests in your
 application. You have an action `REQUEST_ERROR` that dispatches with
 an http status code as its payload whenever there's a failed request.

@@ -1,6 +1,6 @@
 const STORE_KEY = 'EventsStore';
 
-function asyncStorage(AsyncStorage, isConnected) {
+function offlineReactNative(AsyncStorage, isConnected) {
   const saveEvents = events =>
     AsyncStorage.getItem(STORE_KEY)
                 .then(JSON.parse)
@@ -24,4 +24,4 @@ function asyncStorage(AsyncStorage, isConnected) {
   };
 }
 
-module.exports = asyncStorage;
+module.exports = offlineReactNative;
