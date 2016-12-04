@@ -17,3 +17,4 @@ create some standard event shape.
 ReduxGTM provides the following event helpers:
  - [createGAevent](./create-ga-event.md)
  - [createGApageview](./create-ga-pageview.md)
+ - [createGAuserTiming](./create-ga-user-timing.md)

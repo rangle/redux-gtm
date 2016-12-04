@@ -1,33 +1,30 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2016-11-08 14:58:59",
+    "exportTime": "2016-12-02 19:48:56",
     "containerVersion": {
-        "accountId": "572863420",
-        "containerId": "2776924",
-        "containerVersionId": "3",
-        "deleted": false,
+        "path": "accounts/934444524/containers/6059832/versions/0",
+        "accountId": "934444524",
+        "containerId": "6059832",
+        "containerVersionId": "0",
         "container": {
-            "accountId": "572863420",
-            "containerId": "2776924",
-            "name": "ga-starter",
-            "publicId": "GTM-TXG848",
-            "timeZoneCountryId": "US",
-            "timeZoneId": "America/Los_Angeles",
-            "notes": "",
+            "path": "accounts/934444524/containers/6059832",
+            "accountId": "934444524",
+            "containerId": "6059832",
+            "name": "testing",
+            "publicId": "GTM-5D28GVZ",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1478616357479",
-            "tagManagerUrl": "localhost:9001/#/container/accounts/572863420/containers/2776924/workspaces?apiLink=container"
+            "fingerprint": "1480703409806",
+            "tagManagerUrl": "localhost:9001/#/container/accounts/934444524/containers/6059832/workspaces?apiLink=container"
         },
         "tag": [
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "tagId": "3",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "tagId": "1",
                 "name": "GAEvents",
                 "type": "ua",
-                "liveOnly": false,
                 "parameter": [
                     {
                         "type": "BOOLEAN",
@@ -90,19 +87,18 @@
                         "value": "{{GA_TRACKING_ID}}"
                     }
                 ],
-                "fingerprint": "1478616301170",
+                "fingerprint": "1480458718761",
                 "firingTriggerId": [
-                    "9"
+                    "5"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "tagId": "4",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "tagId": "2",
                 "name": "GAPageViews",
                 "type": "ua",
-                "liveOnly": false,
                 "parameter": [
                     {
                         "type": "BOOLEAN",
@@ -129,12 +125,42 @@
                                     {
                                         "type": "TEMPLATE",
                                         "key": "fieldName",
-                                        "value": "page"
+                                        "value": "title"
                                     },
                                     {
                                         "type": "TEMPLATE",
                                         "key": "value",
-                                        "value": "{{page}}"
+                                        "value": "{{title}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "cookieDomain"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "none"
                                     }
                                 ]
                             }
@@ -171,7 +197,92 @@
                         "value": "{{GA_TRACKING_ID}}"
                     }
                 ],
-                "fingerprint": "1478617022715",
+                "fingerprint": "1480708126309",
+                "firingTriggerId": [
+                    "6"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "tagId": "4",
+                "name": "GATiming",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "cookieDomain"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "none"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_TIMING"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "timingLabel",
+                        "value": "{{timingLabel}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "timingCategory",
+                        "value": "{{timingCategory}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "timingVar",
+                        "value": "{{timingVar}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "timingValue",
+                        "value": "{{timingValue}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "{{GA_TRACKING_ID}}"
+                    }
+                ],
+                "fingerprint": "1480618169914",
                 "firingTriggerId": [
                     "10"
                 ],
@@ -180,9 +291,9 @@
         ],
         "trigger": [
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "triggerId": "9",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "triggerId": "5",
                 "name": "Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
@@ -219,12 +330,12 @@
                         ]
                     }
                 ],
-                "fingerprint": "1478616301167"
+                "fingerprint": "1480090852171"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "triggerId": "10",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "triggerId": "6",
                 "name": "PageView",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
@@ -261,29 +372,71 @@
                         ]
                     }
                 ],
-                "fingerprint": "1478616301168"
+                "fingerprint": "1480090852171"
+            },
+            {
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "triggerId": "10",
+                "name": "Timing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "REDUX_GTM_GA_EVENT"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{hitType}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "timing"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1480617898994"
             }
         ],
         "variable": [
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "variableId": "1",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "2",
                 "name": "GA_TRACKING_ID",
                 "type": "c",
                 "parameter": [
                     {
                         "type": "TEMPLATE",
                         "key": "value",
-                        "value": "UA-XXXXXX-YY"
+                        "value": "UA-88271601-1"
                     }
                 ],
-                "fingerprint": "1478616326211"
+                "fingerprint": "1480458697564"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "variableId": "9",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "3",
                 "name": "eventAction",
                 "type": "v",
                 "parameter": [
@@ -308,12 +461,12 @@
                         "value": "eventAction"
                     }
                 ],
-                "fingerprint": "1478113202125"
+                "fingerprint": "1480090852171"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "variableId": "8",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "4",
                 "name": "eventCategory",
                 "type": "v",
                 "parameter": [
@@ -338,12 +491,12 @@
                         "value": "eventCategory"
                     }
                 ],
-                "fingerprint": "1478113173686"
+                "fingerprint": "1480090852171"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "variableId": "7",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "5",
                 "name": "eventLabel",
                 "type": "v",
                 "parameter": [
@@ -368,11 +521,11 @@
                         "value": "eventLabel"
                     }
                 ],
-                "fingerprint": "1478113141832"
+                "fingerprint": "1480090852171"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
+                "accountId": "934444524",
+                "containerId": "6059832",
                 "variableId": "6",
                 "name": "eventValue",
                 "type": "v",
@@ -398,12 +551,12 @@
                         "value": "eventValue"
                     }
                 ],
-                "fingerprint": "1478113112140"
+                "fingerprint": "1480090852172"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "variableId": "10",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "1",
                 "name": "hitType",
                 "type": "v",
                 "parameter": [
@@ -423,12 +576,37 @@
                         "value": "hitType"
                     }
                 ],
-                "fingerprint": "1478113514541"
+                "fingerprint": "1480090852170"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
-                "variableId": "5",
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "15",
+                "name": "location",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "location"
+                    }
+                ],
+                "fingerprint": "1480703409806"
+            },
+            {
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "7",
                 "name": "page",
                 "type": "v",
                 "parameter": [
@@ -453,47 +631,187 @@
                         "value": "page"
                     }
                 ],
-                "fingerprint": "1478112184426"
+                "fingerprint": "1480090852172"
+            },
+            {
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "11",
+                "name": "timingCategory",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "unknown category"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "timingCategory"
+                    }
+                ],
+                "fingerprint": "1480624634080"
+            },
+            {
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "13",
+                "name": "timingLabel",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "unknown label"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "timingLabel"
+                    }
+                ],
+                "fingerprint": "1480624640938"
+            },
+            {
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "12",
+                "name": "timingValue",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "unknown value"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "timingValue"
+                    }
+                ],
+                "fingerprint": "1480624646864"
+            },
+            {
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "10",
+                "name": "timingVar",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "unknown var"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "timingVar"
+                    }
+                ],
+                "fingerprint": "1480624652202"
+            },
+            {
+                "accountId": "934444524",
+                "containerId": "6059832",
+                "variableId": "14",
+                "name": "title",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "title"
+                    }
+                ],
+                "fingerprint": "1480703392306"
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
+                "accountId": "934444524",
+                "containerId": "6059832",
                 "type": "PAGE_URL",
-                "name": "Page URL",
-                "isEnabled": true
+                "name": "Page URL"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
+                "accountId": "934444524",
+                "containerId": "6059832",
                 "type": "PAGE_HOSTNAME",
-                "name": "Page Hostname",
-                "isEnabled": true
+                "name": "Page Hostname"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
+                "accountId": "934444524",
+                "containerId": "6059832",
                 "type": "PAGE_PATH",
-                "name": "Page Path",
-                "isEnabled": true
+                "name": "Page Path"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
+                "accountId": "934444524",
+                "containerId": "6059832",
                 "type": "REFERRER",
-                "name": "Referrer",
-                "isEnabled": true
+                "name": "Referrer"
             },
             {
-                "accountId": "572863420",
-                "containerId": "2776924",
+                "accountId": "934444524",
+                "containerId": "6059832",
                 "type": "EVENT",
-                "name": "Event",
-                "isEnabled": true
+                "name": "Event"
             }
         ],
-        "fingerprint": "1478617028413",
-        "tagManagerUrl": "localhost:9001/#/versions/accounts/572863420/containers/2776924/versions/3?apiLink=version"
+        "fingerprint": "0",
+        "tagManagerUrl": "localhost:9001/#/versions/accounts/934444524/containers/6059832/versions/0?apiLink=version"
     }
 }

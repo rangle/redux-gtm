@@ -7,6 +7,7 @@ const offlineReactNative = require('./extensions/offline-react-native');
 // Event Helpers
 const createGAevent = require('./event-helpers/create-ga-event');
 const createGApageview = require('./event-helpers/create-ga-pageview');
+const createGAuserTiming = require('./event-helpers/create-ga-user-timing');
 
 module.exports = {
   createMiddleware,
@@ -19,5 +20,6 @@ module.exports = {
   EventHelpers: {
     createGAevent,
     createGApageview,
+    createGAuserTiming,
   },
 };

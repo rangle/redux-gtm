@@ -50,10 +50,22 @@ export function createMetaReducer(eventDefinitions: EventDefinitionsMap, dataLay
 
 declare namespace EventHelpers {
   interface GAeventProperties {
-    eventAction?: string,
-    eventCategory?: string,
-    eventLabel?: string,
-    eventValue?: string,
+    eventAction?: string;
+    eventCategory?: string;
+    eventLabel?: string;
+    eventValue?: string;
+  }
+
+  interface GApageviewProperties {
+    title?: string;
+    location?: string;
+  }
+
+  interface GAtimingProperties {
+    timingCategory?: string;
+    timingLabel?: string;
+    timingVar?: string;
+    timingValue?: number;
   }
 
   /**
@@ -66,7 +78,13 @@ declare namespace EventHelpers {
    * Create a page view event compatible with Google Analtyics.
    * Use with the ga-starter container
    */
-  function createGApageview(page?: string): any;
+  function createGApageview(page?: string, pageProps?: GApageviewProperties): any;
+
+  /**
+   * Create a timing event compatible with Google analytics.
+   * Use with the ga-stater container
+   */
+  function createGAuserTiming(timingProps?: GAtimingProperties): any;
 }
 
 declare namespace Extensions {
