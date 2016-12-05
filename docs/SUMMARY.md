@@ -13,6 +13,7 @@
     * [createGAuserTiming](docs/api/event-helpers/create-ga-user-timing.md)
   * [EventDefinitionsMap](docs/api/event-definitions-map.md)
   * [EventDefinition](docs/api/event-definition.md)
+* [Tutorial](docs/tutorial/index.md)
 * [Examples](docs/examples/index.md)
   * [Track Page Views When Using React Router](docs/examples/track-page-views-react-router.md)
   * [Track Failure Events](docs/examples/track-failure-events.md)

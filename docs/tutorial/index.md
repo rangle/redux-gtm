@@ -3,10 +3,12 @@
 * [Sample App Overview](#sample-app-overview)
 * [Prerequisites](#prerequisites)
 * [Google Analytics Setup](#google-analytics-setup)
-* [ReduxGTM Installation & Configuration](#reduxgtm-installation-configuration)
+* [ReduxGTM Installation and Configuration](#reduxgtm-installation-and-configuration)
 * [createGAevent](#creategaevent)
 * [createGApageview](#creategapageview)
 * [Conclusion](#conclusion)
+
+----
 
 Google Tag Manager (GTM) makes it quick and easy for digital marketers to manage what events are sent to analytics servers such as Google Analytics (GA). However, integrating GTM and developing a maintainable tagging strategy is challenging for those who are new to it. Here I am introducing an open source project called [ReduxGTM](https://github.com/rangle/redux-gtm) that resolves the challenge with GTM integration for apps using [Redux](http://redux.js.org/) or [ngrx/store](https://github.com/ngrx/store).
 
@@ -85,7 +87,7 @@ You should be able to see the app running on `localhost:8080` with GTM debugger.
 
 <img width="1431" alt="first-gtm-debugging" src="https://cloud.githubusercontent.com/assets/4659414/20890850/7d2571c2-bad6-11e6-9080-78ad022c90e2.png">
 
-### ReduxGTM Installation & Configuration
+### ReduxGTM Installation and Configuration
 
 Install **ReduxGTM** by running `npm install redux-gtm --save`.
 Next, we import `createMiddleware` from ReduxGTM and create a simple event map for _`LOGIN_USER`_ action (the action is defined in `src/actions/session.actions.ts`). We define the map as `eventDefinitionsMap` in `src/app/sample-app.ts`.
