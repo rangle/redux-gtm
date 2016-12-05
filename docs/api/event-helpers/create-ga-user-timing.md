@@ -1,4 +1,4 @@
-### `createGAuserTiming(timingProps)`
+### `createGAuserTiming(timingProps?)`
 
 Returns a plain JavaScript object with the following properties:
 ```js
