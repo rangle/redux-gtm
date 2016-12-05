@@ -1,2 +1,0 @@
-## Conclusion
-ReduxGTM mitigates the challenge of synchronizing Redux actions to GTM events in your app. It definitely saves your time on studying for the third party integration for your app. Instead, it ensures you have more time for getting priceless feedback on product initiatives and insights that will grow a user base.
