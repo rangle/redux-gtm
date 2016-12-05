@@ -10,6 +10,7 @@
   * [EventHelpers](docs/api/event-helpers/index.md)
     * [createGAevent](docs/api/event-helpers/create-ga-event.md)
     * [createGApageview](docs/api/event-helpers/create-ga-pageview.md)
+    * [createGAuserTiming](docs/api/event-helpers/create-ga-user-timing.md)
   * [EventDefinitionsMap](docs/api/event-definitions-map.md)
   * [EventDefinition](docs/api/event-definition.md)
 * [Examples](docs/examples/index.md)
