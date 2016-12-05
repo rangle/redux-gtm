@@ -9,6 +9,9 @@ Google Tag Manager integration for Redux and ngrx/store
 ```bash
 npm install --save redux-gtm
 ```
+
+![logger-ext](https://cloud.githubusercontent.com/assets/7446702/20887911/9739e4b4-baca-11e6-8d2d-08db48189d0c.gif)
+
 ----
 
 ### Quick Start
@@ -79,12 +82,17 @@ will create the associated custom event and push it to the data layer.
 
 ##### What Else Can You Do?
 
- * You can use ReduxGTM in React Native and Cordova apps
- * You can track analytics events even if one of your users loses connection
- * You can provide multiple event definitions for a single redux action
+ * Use ReduxGTM in React Native and Cordova apps
+ * Track analytics events even if one of your users loses connection
+   (offline events tracking)
+ * Use one of our starter containers to get up and running in GTM with
+   almost zero configuration
+ * Provide multiple event definitions for a single Redux action
 
-### Official Docs
-Please refer to the offlicial docs for a comprehensive API reference, tutorials, and examples.
+### Documentation
+The [official docs](https://rangle.github.io/redux-gtm/) contain
+tutorials, examples, and a comprehensive API reference for the latest
+npm version.
 
 ### License
 This project is licensed under the MIT License.

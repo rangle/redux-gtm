@@ -1,7 +1,6 @@
-## createGAuserTiming(timingProps)
+### `createGAuserTiming(timingProps?)`
 
-### Returns
-A plain JavaScript object with the following properties:
+Returns a plain JavaScript object with the following properties:
 ```js
 {
   event: 'REDUX_GTM_GA_EVENT',
@@ -13,13 +12,15 @@ A plain JavaScript object with the following properties:
 }
 ```
 
-### Expects
+#### Parameters
 ##### `object` timingProps *(optional)*
 Use the `timingProps` argument to pass in values for `timingCategory`,
 `timingLabel`, `timingVar`, and `timingValue`.
 
-### Example
-You want to track the time on task of an input field. You have an action `INPUT_FINISH` that dispatches with the number of milliseconds user spent as its payload whenever that field got blurred.
+#### Example
+You want to track the time on task of an input field. You have an
+action `INPUT_FINISH` that dispatches with the number of milliseconds
+user spent as its payload whenever that field got blurred.
 
 ```js
 import { EventHelpers } from 'redux-gtm';

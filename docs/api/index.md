@@ -9,5 +9,6 @@
 * [`EventHelpers`](event-helpers/index.md)
   * [`createGAevent(eventProps?)`](event-helpers/create-ga-event.md)
   * [`createGApageview(page?)`](event-helpers/create-ga-pageview.md)
+  * [`createGAuserTiming(timingProps?)`](event-helpers/create-ga-user-timing.md)
 * [`EventDefinitionsMap`](event-definitions-map.md)
 * [`EventDefinition`](event-definition.md)
