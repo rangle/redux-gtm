@@ -5,3 +5,4 @@ coverage
 lib
 npm-debug.log
 _book
+dist
