@@ -11,7 +11,7 @@ cordova plugin add cordova-plugin-tag-manager
 ```
 Import the Cordova plugin using `cordova.js` in your source code to set up and create a ReduxGTM with a `customDataLayer` when [`deviceready`](https://cordova.apache.org/docs/en/4.0.0/cordova/events/events.deviceready.html) occurs or when your app is on init.
 
-The code below shows how to implement the cordova plugin, `cordova-plugin-tag-manager`, in Angular2 using Redux along with the pre-requisites mentioned in the beginning.
+The code below is a proof of concept of how to implement `cordova-plugin-tag-manager` in Angular2 using Redux along with the pre-requisites mentioned in the beginning.
 
 ```js
 import { Component, OnInit } from '@angular/core';
