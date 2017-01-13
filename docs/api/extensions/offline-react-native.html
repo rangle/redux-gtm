@@ -1,0 +1,529 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>offlineReactNative | ReduxGTM Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.5.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../../docs/api/event-helpers/index.html" />
+    
+    
+    <link rel="prev" href="../../../docs/api/extensions/offline-web.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.3.3" data-chapter-title="offlineReactNative" data-filepath="docs/api/extensions/offline-react-native.md" data-basepath="../../.." data-revision="Fri Jan 13 2017 11:06:24 GMT-0500 (EST)">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="docs/api/index.html">
+            
+                
+                    <a href="../../../docs/api/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        API Reference
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="docs/api/create-middleware.html">
+            
+                
+                    <a href="../../../docs/api/create-middleware.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        createMiddleware
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="docs/api/create-meta-reducer.html">
+            
+                
+                    <a href="../../../docs/api/create-meta-reducer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        createMetaReducer
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="docs/api/extensions/index.html">
+            
+                
+                    <a href="../../../docs/api/extensions/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="docs/api/extensions/logger.html">
+            
+                
+                    <a href="../../../docs/api/extensions/logger.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                        logger
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="docs/api/extensions/offline-web.html">
+            
+                
+                    <a href="../../../docs/api/extensions/offline-web.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                        offlineWeb
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="docs/api/extensions/offline-react-native.html">
+            
+                
+                    <a href="../../../docs/api/extensions/offline-react-native.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                        offlineReactNative
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="docs/api/event-helpers/index.html">
+            
+                
+                    <a href="../../../docs/api/event-helpers/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        EventHelpers
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="docs/api/event-helpers/create-ga-event.html">
+            
+                
+                    <a href="../../../docs/api/event-helpers/create-ga-event.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        createGAevent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="docs/api/event-helpers/create-ga-pageview.html">
+            
+                
+                    <a href="../../../docs/api/event-helpers/create-ga-pageview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                        createGApageview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="docs/api/event-helpers/create-ga-user-timing.html">
+            
+                
+                    <a href="../../../docs/api/event-helpers/create-ga-user-timing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.3.</b>
+                        
+                        createGAuserTiming
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="docs/api/event-definitions-map.html">
+            
+                
+                    <a href="../../../docs/api/event-definitions-map.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        EventDefinitionsMap
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="docs/api/event-definition.html">
+            
+                
+                    <a href="../../../docs/api/event-definition.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        EventDefinition
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="docs/tutorial/index.html">
+            
+                
+                    <a href="../../../docs/tutorial/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Tutorial
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="docs/examples/index.html">
+            
+                
+                    <a href="../../../docs/examples/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Examples
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="docs/examples/track-page-views-react-router.html">
+            
+                
+                    <a href="../../../docs/examples/track-page-views-react-router.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Track Page Views When Using React Router
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="docs/examples/track-failure-events.html">
+            
+                
+                    <a href="../../../docs/examples/track-failure-events.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Track Failure Events
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="docs/examples/create-mini-surveys.html">
+            
+                
+                    <a href="../../../docs/examples/create-mini-surveys.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Create Mini Surveys
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../" >ReduxGTM Documentation</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="offlinereactnativeasyncstorage-connectivityselector"><code>offlineReactNative(AsyncStorage, connectivitySelector)</code></h3>
+<p>Returns an offline storage extension that records events in
+<a href="https://facebook.github.io/react-native/docs/asyncstorage.html" target="_blank">AsyncStorage</a>
+when offline, and resyncs them when back online.</p>
+<p>Like all offline storage extensions, this extension expects that
+you&apos;re already storing a connectivity flag in your app&apos;s state.</p>
+<p>The following example shows how you would use
+<a href="http://facebook.github.io/react-native/releases/0.38/docs/netinfo.html#netinfo" target="_blank">NetInfo</a>
+in a React Native app to toggle a connectivity flag in Redux, and
+record analytics events offline.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {
+  NetInfo,
+  AsyncStorage,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-native&apos;</span>;
+<span class="hljs-keyword">import</span> { createMiddleware, Extensions } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-gtm&apos;</span>;
+<span class="hljs-keyword">import</span> { GoogleTagManager } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-native-google-analytics-bridge&apos;</span>;
+
+<span class="hljs-comment">// initialize your GTM container</span>
+GoogleTagManager.openContainerWithID(<span class="hljs-string">&apos;GTM-XXXXXX&apos;</span>);
+
+<span class="hljs-comment">// define Redux action types</span>
+<span class="hljs-keyword">const</span> UPDATE_CONNECTIVITY = <span class="hljs-string">&apos;UPDATE_CONNECTIVITY&apos;</span>;
+
+<span class="hljs-comment">// create your Redux reducer</span>
+<span class="hljs-keyword">const</span> initialState = {
+  isConnected: <span class="hljs-literal">true</span>, <span class="hljs-comment">// by default the app is assumed to have a connection</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-keyword">case</span> UPDATE_CONNECTIVITY {
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, state, { isConnected: action.payload });
+    }
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> state;
+  }
+}
+
+<span class="hljs-comment">// map your redux action types to analytics events</span>
+<span class="hljs-keyword">const</span> eventDefinitionsMap = {
+  ...
+};
+
+<span class="hljs-comment">// Create a connectivity selector (the important part),</span>
+<span class="hljs-comment">// It accepts the Redux state, and it should return a boolean.</span>
+<span class="hljs-comment">// The connectivity selector should return true when the app</span>
+<span class="hljs-comment">// is online and false if it&apos;s offline.</span>
+<span class="hljs-keyword">const</span> isConnected = state =&gt; state.isConnected;
+
+<span class="hljs-comment">// create the offline storage extension</span>
+<span class="hljs-keyword">const</span> offlineStorage = Extensions.offlineReactNative(AsyncStorage, isConnected);
+
+<span class="hljs-comment">// create a custom data layer extension</span>
+<span class="hljs-keyword">const</span> customDataLayer = {
+  push: GoogleTagManager.pushDataLayerEvent,
+};
+
+<span class="hljs-comment">// create the analytics middleware</span>
+<span class="hljs-keyword">const</span> middleware = createMiddleware(
+  eventDefinitionsMap,
+  { customDataLayer, offlineStorage }
+);
+<span class="hljs-comment">// create the store</span>
+<span class="hljs-keyword">const</span> store = createStore(reducer, applyMiddleware(middleware));
+
+<span class="hljs-comment">// now, add event listeners to update the connectivity flag</span>
+NetInfo.isConnected.addEventListener(<span class="hljs-string">&apos;change&apos;</span>, (isConnected) =&gt; {
+  store.dispatch({
+    type: UPDATE_CONNECTIVITY,
+    payload: isConnected,
+  });
+});
+
+<span class="hljs-comment">// Whenever your app loses connection, your analytics events will now</span>
+<span class="hljs-comment">// be saved offline until it regains its connection.</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../../docs/api/extensions/offline-web.html" class="navigation navigation-prev " aria-label="Previous page: offlineWeb"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../../docs/api/event-helpers/index.html" class="navigation navigation-next " aria-label="Next page: EventHelpers"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../../gitbook/app.js"></script>
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"github":{"url":"https://github.com/rangle/redux-gtm"},"highlight":{},"search":{},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

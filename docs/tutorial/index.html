@@ -1,0 +1,652 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Tutorial | ReduxGTM Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.5.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../docs/examples/index.html" />
+    
+    
+    <link rel="prev" href="../../docs/api/event-definition.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="2" data-chapter-title="Tutorial" data-filepath="docs/tutorial/index.md" data-basepath="../.." data-revision="Fri Jan 13 2017 11:06:24 GMT-0500 (EST)">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="docs/api/index.html">
+            
+                
+                    <a href="../../docs/api/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        API Reference
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="docs/api/create-middleware.html">
+            
+                
+                    <a href="../../docs/api/create-middleware.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        createMiddleware
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="docs/api/create-meta-reducer.html">
+            
+                
+                    <a href="../../docs/api/create-meta-reducer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        createMetaReducer
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="docs/api/extensions/index.html">
+            
+                
+                    <a href="../../docs/api/extensions/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="docs/api/extensions/logger.html">
+            
+                
+                    <a href="../../docs/api/extensions/logger.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                        logger
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="docs/api/extensions/offline-web.html">
+            
+                
+                    <a href="../../docs/api/extensions/offline-web.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                        offlineWeb
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="docs/api/extensions/offline-react-native.html">
+            
+                
+                    <a href="../../docs/api/extensions/offline-react-native.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                        offlineReactNative
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="docs/api/event-helpers/index.html">
+            
+                
+                    <a href="../../docs/api/event-helpers/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        EventHelpers
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="docs/api/event-helpers/create-ga-event.html">
+            
+                
+                    <a href="../../docs/api/event-helpers/create-ga-event.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        createGAevent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="docs/api/event-helpers/create-ga-pageview.html">
+            
+                
+                    <a href="../../docs/api/event-helpers/create-ga-pageview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                        createGApageview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="docs/api/event-helpers/create-ga-user-timing.html">
+            
+                
+                    <a href="../../docs/api/event-helpers/create-ga-user-timing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.3.</b>
+                        
+                        createGAuserTiming
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="docs/api/event-definitions-map.html">
+            
+                
+                    <a href="../../docs/api/event-definitions-map.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        EventDefinitionsMap
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="docs/api/event-definition.html">
+            
+                
+                    <a href="../../docs/api/event-definition.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        EventDefinition
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="docs/tutorial/index.html">
+            
+                
+                    <a href="../../docs/tutorial/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Tutorial
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="docs/examples/index.html">
+            
+                
+                    <a href="../../docs/examples/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Examples
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="docs/examples/track-page-views-react-router.html">
+            
+                
+                    <a href="../../docs/examples/track-page-views-react-router.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Track Page Views When Using React Router
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="docs/examples/track-failure-events.html">
+            
+                
+                    <a href="../../docs/examples/track-failure-events.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Track Failure Events
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="docs/examples/create-mini-surveys.html">
+            
+                
+                    <a href="../../docs/examples/create-mini-surveys.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Create Mini Surveys
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >ReduxGTM Documentation</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="getting-started-with-reduxgtm">Getting Started with ReduxGTM</h1>
+<ul>
+<li><a href="#sample-app-overview">Sample App Overview</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#google-analytics-setup">Google Analytics Setup</a></li>
+<li><a href="#reduxgtm-installation-and-configuration">ReduxGTM Installation and Configuration</a></li>
+<li><a href="#creategaevent">createGAevent</a></li>
+<li><a href="#creategapageview">createGApageview</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<hr>
+<p>Google Tag Manager (GTM) makes it quick and easy for digital marketers to manage what events are sent to analytics servers such as Google Analytics (GA). However, integrating GTM and developing a maintainable tagging strategy is challenging for those who are new to it. Here I am introducing an open source project called <a href="https://github.com/rangle/redux-gtm" target="_blank">ReduxGTM</a> that resolves the challenge with GTM integration for apps using <a href="http://redux.js.org/" target="_blank">Redux</a> or <a href="https://github.com/ngrx/store" target="_blank">ngrx/store</a>.</p>
+<p>The aim of this tutorial is to walk you through the basic setup of the library in a sample application. By the end of the tutorial, you will be able to track GA <a href="https://support.google.com/analytics/answer/6086080?hl=en" target="_blank">pageviews</a> and GA custom events on any Angular2 application that uses Redux.</p>
+<h2 id="sample-app-overview">Sample App Overview</h2>
+<p>angular2-redux-example is built with Angular 2, Redux, and Webpack and used at <a href="https://rangle.io/" target="_blank">Rangle</a> as a teaching material. It is a counter that can increment and decrement by button clicks. Also it comprises a simple user authentication and a navigation to a secondary page using <a href="https://github.com/dagstuan/ng2-redux-router" target="_blank">ng2-redux-router</a>.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/4659414/20890849/7d217c3e-bad6-11e6-9573-df5a7448d462.gif" alt="example-app"></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Clone or download <a href="https://github.com/rangle/angular2-redux-example" target="_blank">angular2-redux-example</a></li>
+<li>Get your GA account</li>
+<li>Follow the provided links below for GTM setup and installation<ul>
+<li><a href="https://support.google.com/tagmanager/answer/6103696?hl=en&amp;ref_topic=3441530#CreatingAnAccount" target="_blank">Create an account and container</a></li>
+<li><a href="https://developers.google.com/tag-manager/quickstart" target="_blank">Add the container snippet</a></li>
+</ul>
+</li>
+</ul>
+<p><em>src/index.html</em></p>
+<pre><code class="lang-html">    <span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;utf-8&quot;</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- Google Tag Manager --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">w,d,s,l,i</span>)</span>{w[l]=w[l]||[];w[l].push({<span class="hljs-string">&apos;gtm.start&apos;</span>:
+            <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime(),event:<span class="hljs-string">&apos;gtm.js&apos;</span>});<span class="hljs-keyword">var</span> f=d.getElementsByTagName(s)[<span class="hljs-number">0</span>],
+            j=d.createElement(s),dl=l!=<span class="hljs-string">&apos;dataLayer&apos;</span>?<span class="hljs-string">&apos;&amp;l=&apos;</span>+l:<span class="hljs-string">&apos;&apos;</span>;j.async=<span class="hljs-literal">true</span>;j.src=
+            <span class="hljs-string">&apos;https://www.googletagmanager.com/gtm.js?id=&apos;</span>+i+dl;f.parentNode.insertBefore(j,f);
+            })(<span class="hljs-built_in">window</span>,<span class="hljs-built_in">document</span>,<span class="hljs-string">&apos;script&apos;</span>,<span class="hljs-string">&apos;dataLayer&apos;</span>,<span class="hljs-string">&apos;GTM-XXXXXX&apos;</span>);</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- End Google Tag Manager --&gt;</span>
+
+            ...
+
+        <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- Google Tag Manager (noscript) --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">noscript</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">iframe</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX&quot;</span>
+            <span class="hljs-attribute">height</span>=<span class="hljs-value">&quot;0&quot;</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;0&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;display:none;visibility:hidden&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">iframe</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">noscript</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- End Google Tag Manager (noscript) --&gt;</span>
+
+            ...
+
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>The code snippet above shows where your GTM container snippet should be added (<em>you will have to replace <code>GTM-XXXXXX</code> with your own GTM ID that you created before</em>).</p>
+<h2 id="google-analytics-setup">Google Analytics Setup</h2>
+<p>ReduxGTM provides a starter container that makes it easy to track basic GA pageview and event trackings with GTM.</p>
+<ol>
+<li>Download <a href="https://raw.githubusercontent.com/rangle/redux-gtm/master/containers/ga-starter.json" target="_blank"><code>GA starter</code></a> from ReduxGTM.</li>
+<li>Login to <a href="#prerequisites">your own GTM container</a></li>
+<li>In the top navigation, click through to the <strong>ADMIN</strong></li>
+<li>Under the <strong>CONTAINER</strong> options, click on the <strong>Import Container</strong></li>
+<li>Choose <code>GA starter</code> as your container file</li>
+</ol>
+<p><img width="1050" alt="import-ga-starter" src="https://cloud.githubusercontent.com/assets/4659414/20890853/7d2af052-bad6-11e6-9ee0-13e7edcf0024.png"></p>
+<p>After importing the starter container to GTM, you should see some changes in the GTM workspace.</p>
+<p><img width="1404" alt="workspace-changes" src="https://cloud.githubusercontent.com/assets/4659414/20890854/7d2b5dbc-bad6-11e6-83e7-7bb59f22cf79.png"></p>
+<p>Assign <code>GA_TRACKING_ID</code> with your own GA Account ID (<a href="https://support.google.com/analytics/answer/1032385?hl=en" target="_blank">find your GA Account ID</a>).</p>
+<p>Now we are ready to debug our container for the first time! You can find <em>How to preview and debug containers</em> <a href="https://support.google.com/tagmanager/answer/6107056?hl=en" target="_blank">here</a>.
+Having GTM&apos;s preview mode on, just run the following commands in <em>angular2-redux-example</em> folder.</p>
+<pre><code>npm install
+npm run dev
+</code></pre><p>You should be able to see the app running on <code>localhost:8080</code> with GTM debugger.</p>
+<p><img width="1431" alt="first-gtm-debugging" src="https://cloud.githubusercontent.com/assets/4659414/20890850/7d2571c2-bad6-11e6-9080-78ad022c90e2.png"></p>
+<h3 id="reduxgtm-installation-and-configuration">ReduxGTM Installation and Configuration</h3>
+<p>Install <strong>ReduxGTM</strong> by running <code>npm install redux-gtm --save</code>.
+Next, we import <code>createMiddleware</code> from ReduxGTM and create a simple event map for <em><code>LOGIN_USER</code></em> action (the action is defined in <code>src/actions/session.actions.ts</code>). We define the map as <code>eventDefinitionsMap</code> in <code>src/app/sample-app.ts</code>.</p>
+<pre><code class="lang-js">
+...
+
+<span class="hljs-keyword">import</span> { createMiddleware } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-gtm&apos;</span>;
+
+<span class="hljs-keyword">const</span> eventDefinitionsMap = {
+  <span class="hljs-string">&apos;LOGIN_USER&apos;</span>: {
+    eventName: <span class="hljs-string">&apos;LOGIN_USER&apos;</span>,
+  }
+};
+
+...
+
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RioSampleApp</span> </span>{
+
+  ...
+
+  constructor(
+    private devTools: DevToolsExtension,
+    private ngRedux: NgRedux&lt;IAppState&gt;,
+    private ngReduxRouter: NgReduxRouter,
+    private actions: SessionActions,
+    private epics: SessionEpics) {
+
+    middleware.push(createEpicMiddleware(<span class="hljs-keyword">this</span>.epics.login));
+
+    <span class="hljs-comment">// create and push ReduxGTM</span>
+    middleware.push(createMiddleware(eventDefinitionsMap));
+
+    ngRedux.configureStore(
+      rootReducer,
+      {},
+      middleware,
+      devTools.isEnabled() ?
+        [ ...enhancers, devTools.enhancer() ] :
+        enhancers);
+
+    ngReduxRouter.initialize();
+  }
+}
+</code></pre>
+<p>If you run <code>npm run dev</code> with GTM preview mode on and log in with one of the credentials given in <code>server/user.json</code> (e.g. <code>Username: &quot;user&quot;</code>, <code>Password: &quot;pass&quot;</code>), then you would see <code>LOGIN_USER</code> action logged in GTM debugger.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/4659414/20890852/7d281530-bad6-11e6-9d0c-9c8ade8989cb.gif" alt="login-user-event"></p>
+<h2 id="creategaevent">createGAevent</h2>
+<p>Now we have a very basic event that GTM debugger reports. However, this event does not match with any of our GTM tags. To find a proper tag for the event, we need to provide more information in its definition by assigning a function to <code>eventFields</code>. ReduxGTM provides <code>EventHelpers</code> which can create <em>GA-starter-compatible</em> triggers. We use <code>createGAevent</code> event helper to specify <a href="https://developers.google.com/tag-manager/devguide" target="_blank">dataLayer</a> variables and pass them to GTM as a tag trigger. <code>createGAevent</code> takes an object called <code>eventProps</code> as an optional parameter and returns the following Javascript object.</p>
+<pre><code class="lang-js">{
+  event: <span class="hljs-string">&apos;REDUX_GTM_GA_EVENT&apos;</span>,
+  hitType: <span class="hljs-string">&apos;event&apos;</span>,
+  eventAction, <span class="hljs-comment">// defaults to &quot;unkown action&quot;</span>
+  eventCategory, <span class="hljs-comment">// defaults to &quot;unknown category&quot;</span>
+  eventLabel, <span class="hljs-comment">// defaults to &quot;unknown label&quot;</span>
+  eventValue, <span class="hljs-comment">// defaults to &quot;unknown value&quot;</span>
+}
+</code></pre>
+<p>With <code>createGAevent</code>, we can assign specific values to the variables to enhance <code>eventDefinitionsMap</code>.</p>
+<p><em>src/app/sample-app.ts</em></p>
+<pre><code class="lang-js">
+...
+
+<span class="hljs-comment">// import ReduxGTM APIs</span>
+<span class="hljs-keyword">import</span> { createMiddleware, EventHelpers } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-gtm&apos;</span>;
+<span class="hljs-keyword">const</span> { createGAevent } = EventHelpers;
+
+<span class="hljs-keyword">const</span> eventDefinitionsMap = {
+  <span class="hljs-string">&apos;LOGIN_USER&apos;</span>: {
+    eventFields: (prevState, action) =&gt; {
+      <span class="hljs-keyword">return</span> createGAevent({
+        eventAction: <span class="hljs-string">&apos;Click Login Button&apos;</span>,
+        eventCategory: <span class="hljs-string">&apos;Login&apos;</span>,
+        eventLabel: <span class="hljs-string">&apos;Login Attempt&apos;</span>,
+        eventValue: action.payload.username,
+      });
+  },
+  },
+};
+
+...
+</code></pre>
+<p>GTM debugger logs that user login action now emits an event that has enough information to trigger <code>GAEvents</code> tag.</p>
+<p><img width="499" alt="login-event-info" src="https://cloud.githubusercontent.com/assets/4659414/20890855/7d32108a-bad6-11e6-9bee-2dadc12b254e.png"></p>
+<p>We can create eventDefinitions using <code>createGAevent</code> the for other actions defined in <code>src/actions/session.actions.ts</code> and <code>src/actions/counter.actions.ts</code>.</p>
+<h2 id="creategapageview">createGApageview</h2>
+<p>Time to create a pageview which triggers <code>GAPageViews</code> tag. Similar to creating a <code>GAEvents</code> trigger, we call <code>createGApageview</code> for pageview events.
+<code>createGApageview</code> takes a string as an optional parameter and returns the following Javascript object. The parameter is to pass in a value of <code>page</code> property.</p>
+<pre><code class="lang-js">{
+  event: <span class="hljs-string">&apos;REDUX_GTM_GA_EVENT&apos;</span>,
+  hitType: <span class="hljs-string">&apos;pageview&apos;</span>,
+  page, <span class="hljs-comment">// defaults to &apos;unknown page&apos;,</span>
+}
+</code></pre>
+<p><code>ng2-redux-router</code> dispatches <code>UPDATE_LOCATION</code> action on every route change for which we can create a pageview event definition, hence, we need to import <code>UPDATE_LOCATION</code> from <code>ng2-redux-router</code> and <code>createGApageview</code> from ReduxGTM <code>EventHelpers</code>.</p>
+<p><em>src/app/sample-app.ts</em></p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { NgReduxRouter, UPDATE_LOCATION } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;ng2-redux-router&apos;</span>;
+
+...
+
+<span class="hljs-comment">// import ReduxGTM APIs</span>
+<span class="hljs-keyword">import</span> { createMiddleware, EventHelpers } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-gtm&apos;</span>;
+<span class="hljs-keyword">const</span> { createGAevent, createGApageview } = EventHelpers;
+
+<span class="hljs-keyword">const</span> eventDefinitionsMap = {
+  <span class="hljs-string">&apos;LOGIN_USER&apos;</span>: {
+    eventFields: (prevState, action) =&gt; {
+      <span class="hljs-keyword">return</span> createGAevent({
+        eventAction: <span class="hljs-string">&apos;Click Login Button&apos;</span>,
+        eventCategory: <span class="hljs-string">&apos;Login&apos;</span>,
+        eventLabel: <span class="hljs-string">&apos;Login Attempt&apos;</span>,
+        eventValue: action.payload.username,
+      });
+    },
+  },
+  [UPDATE_LOCATION]: {
+    eventFields: (prevState, action) =&gt; {
+      <span class="hljs-keyword">return</span> createGApageview( action.payload );
+    },
+  },
+};
+...
+</code></pre>
+<p>If we refresh our app running with GTM preview mode in a browser and click on <code>About Us</code> link on the top nav bar, we see <code>GAPageViews</code> tag triggered on route change.</p>
+<p><img width="612" alt="pageview-props" src="https://cloud.githubusercontent.com/assets/4659414/20890851/7d25b70e-bad6-11e6-8ca9-bfe64c51d9a4.png"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>ReduxGTM mitigates the challenge of synchronizing Redux actions to GTM events in your app. It definitely saves your time on studying for the third party integration for your app. Instead, it ensures you have more time for getting priceless feedback on product initiatives and insights that will grow a user base.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../docs/api/event-definition.html" class="navigation navigation-prev " aria-label="Previous page: EventDefinition"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../docs/examples/index.html" class="navigation navigation-next " aria-label="Next page: Examples"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"github":{"url":"https://github.com/rangle/redux-gtm"},"highlight":{},"search":{},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
