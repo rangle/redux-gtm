@@ -1,4 +1,5 @@
 <h1 style="color: red">Deprecation Notice</h1>
+
 ### ReduxGTM has been deprecated in favour of [Redux Beacon](https://github.com/rangle/redux-beacon).
 #### A simple migration guide can be found [here](https://rangle.github.io/redux-beacon/docs/migrating-from-redux-gtm.html).
 
